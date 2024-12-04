@@ -112,7 +112,7 @@ const Header = () => {
         </nav>
         <button className="contact-sales" onClick={toggleFormVisibility}>Contact Sales →</button>
         {
-          isFormVisible && <Form></Form>
+          isFormVisible && <Form isFormVisible={isFormVisible}></Form>
         }
       </header>
     </>

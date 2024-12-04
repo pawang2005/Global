@@ -2,6 +2,7 @@ import "./Home.component.css";
 import Header from "./Header";
 import Carousel from "./Carousel";
 const Home = () => {
+
   const DigitalContent = [
     {
       span: "Discover the Best Agencies",
@@ -27,25 +28,60 @@ const Home = () => {
 
   const cardsData = [
     {
-      title: 'How a cosmetics brand used SMM to garner eyeballs',
-      category: 'Marketing',
+      title: 'Software Development1',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
       image: '/discover.png',
     },
     {
-      title: 'How a digital kiosk fostered learning for an ed-tech startup',
-      category: 'Emerging Technology',
-      image:'/discover.png',
-    },
-    {
-      title: 'How ad campaigns helped a tech startup increase sales',
-      category: 'Marketing',
+      title: 'Software Development2',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
       image: '/discover.png',
     },
     {
-      title: 'How a retail chain used IoT solutions for superior customer experience',
-      category: 'Cloud & Data',
+      title: 'Software Development3',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
       image: '/discover.png',
     },
+    {
+      title: 'Software Development4',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
+      image: '/discover.png',
+    },
+    {
+      title: 'Software Development5',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
+      image: '/discover.png',
+    },
+    {
+      title: 'Software Development6',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
+      image: '/discover.png',
+    },
+    {
+      title: 'Software Development7',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
+      image: '/discover.png',
+    },   
+    {
+      title: 'Software Development8',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
+      image: '/discover.png',
+    },   
+    {
+      title: 'Software Development9',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
+      image: '/discover.png',
+    },   
+    {
+      title: 'Software Development10',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
+      image: '/discover.png',
+    },   
+    {
+      title: 'Software Development11',
+      content: 'A mental health startup leveraged a mobile app for  patient interaction',
+      image: '/discover.png',
+    },    
   ];
   return (
     <>
@@ -160,19 +196,24 @@ const Home = () => {
       </div>
 
       <div className="case">
-        <div>
-          <h3>Case Studies</h3>
+        <div className="case-studies">
+          <h3 style={{color:"lightgray"}}>Case Studies</h3>
         </div>
-        <div>
-          <h2>Explore the impact we've delivered</h2>
+        <div className="explore-impact">
+          <h2 style={{color:"#fff"}}>Explore the impact we've delivered</h2>
         </div>
         <div>
           <button className="contact-sales">View All →</button>
         </div>  
         <div className="carousel-container">
+          {
+            console.log(cardsData)
+          }
           <Carousel cards={cardsData} />
         </div>
-        <div></div>
+      </div>
+      
+      <div>
       </div>
     </>
   );
