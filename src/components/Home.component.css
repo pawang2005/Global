@@ -1,0 +1,137 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  margin: 0px auto;
+}
+
+.content-container{
+  margin: 80px 20px;
+}
+.content-container div{
+  padding: 20px;
+}
+
+.image-container{
+  width: 100%;
+}
+
+.trust{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.digital-context{
+  margin-top: 50px;
+  color: #fff;
+ 
+}
+.digital {
+  margin-top: 0;
+  height: 650px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  /* position: sticky; */
+  /* top: 0; */
+  /* z-index: -1; */
+}
+.digital-content{
+  padding: 20px 30px;
+}
+
+.services {
+  background-color: #fff;
+  height: 500px;
+  width: 350px;
+  border: 1px solid black;
+  border-radius: 5%;
+  top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* position: sticky; */
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+}
+.services img {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.services span{
+  font-size: 25px;
+  font-weight: 800;
+  color: black
+}
+.services p{
+  font-size: 20px;
+  font-weight: 500;
+  color: black
+}
+
+.main-service{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.additional-content {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.global-scale-content{
+  margin: 20px;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.served{
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
+.served span{
+  font-weight: 800;
+  font-size: 40px;
+}
+.served p{
+  font-size: medium;
+}
+.Backed{
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+}
+.Backed div{
+  font-size: 15px;
+  font-weight: 650;
+}
+.Backed img{
+  height: 35px;
+  width: 150px;
+}
+.global-img{
+  margin-top: 40px;
+}
+
+.case{
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: 120vh;
+}
+
+.case div{
+  display: flex;
+}
+

@@ -1,0 +1,17 @@
+.carousel {
+  position: relative;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.carousel-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  overflow: hidden;
+}
+
