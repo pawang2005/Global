@@ -1,7 +1,8 @@
 .container{
   display: flex;
   flex-direction: row;
-  margin: 0px auto;
+  margin: 0px;
+  justify-content: center;
 }
 
 .content-container{
@@ -21,8 +22,12 @@
   margin-top: 100px;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-
+.brand-slider-logo{
+  margin-left: 140px;
+}
 .digital-context{
   margin-top: 50px;
   color: #fff;
@@ -131,7 +136,7 @@
   flex-direction: column;
   background-color: black;
   align-items: center;
-  height: 120vh;
+  height: 870px;
 }
 
 .case .case-studies{
@@ -143,15 +148,13 @@
   margin-bottom: 20px;
 }
 
-
-
-
-.carousel-container {
+.carousel-container-c {
   font-family: Arial, sans-serif;
   color: #fff;
   display: flex;
   flex-direction: column; /* Stack arrows and cards vertically */
   align-items: center;
+  width: 100%;
   height: auto; 
 }
 

@@ -1,65 +1,9 @@
 import "./Home.component.css";
-
+import Blog from "./Blog";
 import Carousel from "./Carousel";
 import DrivingResult from "./DrivingResult";
+import BrandSlider from "./BrandSlider";
 const Home = () => {
-  const DrivingResultData = [
-    {
-      image: "/discover.png",
-      content:
-        "“1 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
-      name: "Pawan",
-      position: "CEO",
-      progress: "Agent Shortlisting",
-    },
-    {
-      image: "/discover.png",
-      content:
-        "“2 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
-      name: "Pawan",
-      position: "CEO",
-      progress: "Agent Shortlisting",
-    },
-    {
-      image: "/discover.png",
-      content:
-        "“3 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
-      name: "Pawan",
-      position: "CEO",
-      progress: "Agent Shortlisting",
-    },
-    {
-      image: "/discover.png",
-      content:
-        "“4 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
-      name: "Pawan",
-      position: "CEO",
-      progress: "Agent Shortlisting",
-    },
-  ];
-  const DigitalContent = [
-    {
-      span: "Discover the Best Agencies",
-      p: "We have a network of 1,500+ best-in-class development agencies skilled in building scalable tech solutions across 20+ industries.",
-      img: "/discover.png",
-    },
-    {
-      span: "Payment security through Escrow",
-      p: "Take the leap of faith easily with our escrow services, where payments are only released after you consent.",
-      img: "/discover.png",
-    },
-    {
-      span: "End-to-end project management",
-      p: "Get a reliable project manager who will offer comprehensive support and ensures that your project stays consistently on track.",
-      img: "/discover.png",
-    },
-  ];
-  const global = {
-    project: 4500,
-    client: 2500,
-    country: 23,
-  };
-
   const cardsData = [
     {
       title: "Software Development1",
@@ -128,10 +72,66 @@ const Home = () => {
       image: "/discover.png",
     },
   ];
+  const DrivingResultData = [
+    {
+      image: "/discover.png",
+      content:
+        "“1 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
+      name: "Pawan",
+      position: "CEO",
+      progress: "Agent Shortlisting",
+    },
+    {
+      image: "/discover.png",
+      content:
+        "“2 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
+      name: "Pawan",
+      position: "CEO",
+      progress: "Agent Shortlisting",
+    },
+    {
+      image: "/discover.png",
+      content:
+        "“3 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
+      name: "Pawan",
+      position: "CEO",
+      progress: "Agent Shortlisting",
+    },
+    {
+      image: "/discover.png",
+      content:
+        "“4 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
+      name: "Pawan",
+      position: "CEO",
+      progress: "Agent Shortlisting",
+    },
+  ];
+  const DigitalContent = [
+    {
+      span: "Discover the Best Agencies",
+      p: "We have a network of 1,500+ best-in-class development agencies skilled in building scalable tech solutions across 20+ industries.",
+      img: "/discover.png",
+    },
+    {
+      span: "Payment security through Escrow",
+      p: "Take the leap of faith easily with our escrow services, where payments are only released after you consent.",
+      img: "/discover.png",
+    },
+    {
+      span: "End-to-end project management",
+      p: "Get a reliable project manager who will offer comprehensive support and ensures that your project stays consistently on track.",
+      img: "/discover.png",
+    },
+  ];
+  const global = {
+    project: 4500,
+    client: 2500,
+    country: 23,
+  };
   return (
     <>
       <div className="container">
-        <div className="content-container" style={{flexDirection:"column"}}>
+        <div className="content-container" style={{ flexDirection: "column" }}>
           <div>
             <h2>Empowering businesses on their digital journey</h2>
           </div>
@@ -152,6 +152,9 @@ const Home = () => {
       <div className="trust">
         <div className="trust-content">
           <h2>Trusted by the best in the business</h2>
+        </div>
+        <div class="brand-slider-logo">
+          <BrandSlider></BrandSlider>
         </div>
       </div>
 
@@ -233,7 +236,7 @@ const Home = () => {
             </div>
           </div>
         </div>
- 
+
         <div className="global-img">
           <img src="/global.gif" alt="" />
         </div>
@@ -251,9 +254,44 @@ const Home = () => {
             View All →
           </button>
         </div>
-        <div className="carousel-container">
-          {console.log(cardsData)}
+        <div className="carousel-container-c">
           <Carousel cards={cardsData} cardsperslide={4} />
+        </div>
+      </div>
+
+      <div className="accomplish" style={{ background: "#fff" }}>
+        <div className="accomplish-content">
+          <h2 style={{ color: "black" }}>
+            We are big enough to deliver and small enough to care
+          </h2>
+          <p style={{ marginBottom: "40px" }}>
+            Teams large and small rely on EMB
+          </p>
+          <div style={{marginBottom:"40px"}}>
+            <button className="contact-sales">Contact Sales →</button>
+          </div>
+          
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              width:"100%"
+            }}
+          >
+            <div>
+              9.4/10 <br /> Customer Satisfaction
+            </div>
+            <div>
+              120 + <br /> Tech Stacks
+            </div>
+            <div>
+              30 % <br /> Reduction in Delivery Time
+            </div>
+            <div>
+              70 % <br /> Repeat Customers
+            </div>
+          </div>
         </div>
       </div>
 
@@ -271,30 +309,7 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="blog-container">
-        <div className="blog">
-          <h3>Blogs</h3>
-          <h2>Learning how Technology can help you grow</h2>
-          <p>
-            We bring you the latest insights in the tech industry. Stay at the
-            forefront of technology trends and discover how to thrive in the
-            digital era.
-          </p>
-          <button>View More →</button>
-        </div>
-        <div className="blog-carousel">
-          <Carousel cards={cardsData} cardsperslide={3} />
-        </div>
-      </div>
-
-      <div className="accomplish">
-        <div className="accomplish-content">
-          <h2>See all that you can accomplish with EMB Global</h2>
-          <div>
-            <button className="contact-sales">Contact Sales →</button>
-          </div>
-        </div>
-      </div>
+      <Blog></Blog>
     </>
   );
 };

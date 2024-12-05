@@ -1,66 +1,30 @@
 import "./Partner.component.css";
-import { useState, useEffect , useRef} from 'react'
+import { useState, useEffect, useRef } from "react";
+import Container from "./Container";
+import Blog from "./Blog";
+import BrandSlider from "./BrandSlider";
 const Partner = () => {
-  const allLogos = [
-    { image: "/brand.png" },
-    { image: "/emerging.png" },
-    { image: "/brand.png" },
-    { image: "/brand.png" },
-    { image: "/cloud.png" },
-    { image: "/brand.png" },
-    { image: "/emerging.png" },
-    { image: "/marketing.png" },
-    { image: "/brand.png" },
-    { image: "/brand.png" },
-    { image: "/discover.png" },
-    { image: "/brand.png" },
-    { image: "/brand.png" },
-    { image: "/brand.png" },
-    { image: "/brand.png" },
-    { image: "/brand.png" },
-  ];
-  const interval = 2000
-  const cardsperslide = 4;
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(cardsperslide);
-  const totalSlides = allLogos.length;
-  const carouselRef = useRef(null);
-
   
-  const clonedCards = [
-    ...allLogos.slice(-cardsperslide), // Clone last cards at the beginning
-    ...allLogos,
-    ...allLogos.slice(0, cardsperslide), // Clone first cards at the end
-  ];
-  const handleNext = () => {
-    if (isAnimating) return; // Prevent animation interruptions
-    setIsAnimating(true);
-    setCurrentIndex((prev) => prev + 1);
+  const interval = 2000;
+  const [currentIndexContainer, setCurrentIndexContainer] = useState(0);
+
+  const handleNextContainer = () => {
+    setCurrentIndexContainer((prevIndex) => (prevIndex + 1) % 3);
+  };
+
+  const handlePrevContainer = () => {
+    setCurrentIndexContainer((prevIndex) => (prevIndex - 1 + 3) % 3);
   };
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      handleNext(); // Automatically move to the next card
+      handleNextContainer(); // Automatically move to the next card
     }, interval);
 
     return () => clearInterval(slideInterval); // Clean up on unmount
   }, [interval]);
 
-  useEffect(() => {
-    if (isAnimating) {
-      const timeout = setTimeout(() => {
-        setIsAnimating(false);
-
-        // Snap to the original cards when reaching the cloned ones
-        if (currentIndex === 0) {
-          setCurrentIndex(totalSlides);
-        } else if (currentIndex === totalSlides + cardsperslide) {
-          setCurrentIndex(cardsperslide);
-        }
-      }, 300); // Match with CSS transition duration
-      return () => clearTimeout(timeout);
-    } 
-  }, [currentIndex, totalSlides, cardsperslide, isAnimating]);
+  
   return (
     <>
       <div className="container">
@@ -87,20 +51,265 @@ const Partner = () => {
         <div className="brand-header">
           <h2>Brands that Believe in us</h2>
         </div>
-        <div className="brand-slider" ref={carouselRef}>
-          <div className="slider-track" style={{
-            transform: `translateX(-${
-              (currentIndex * 100) / cardsperslide
-            }%)`,
-            transition: isAnimating ? "transform 0.3s ease-in-out" : "none",
-          }}>
-            {clonedCards.map((logo, index) => (
-              <div className="slide" key={index} >
-                <img src={logo.image} alt={`Brand ${index + 1}`} />
+        <BrandSlider></BrandSlider>
+      </div>
+
+      <div className="why-emb">
+        <div className="why-emb-header">
+          <h2>Why EMB?</h2>
+        </div>
+        <div className="why-emb-reason">
+          <div className="why-emb-image">
+            <img src="/project-dashboard.png" alt="" />
+          </div>
+
+          <div className="why-emb-text">
+            <div className="why-emb-list">
+              <div style={{ marginBottom: "30px" }}>
+                <div
+                  style={{ display: "flex", flexDirection: "row", gap: "3%" }}
+                >
+                  <img
+                    src="/bullet-point.png"
+                    alt=""
+                    style={{ marginTop: "10px" }}
+                  />
+                  <span style={{ fontWeight: "bold" }}>
+                    Access our Client Network
+                  </span>
+                </div>
+
+                <p style={{ fontSize: "22px", marginLeft: "45px" }}>
+                  With over 2500 clients from 15 industries, get the opportunity
+                  to take up the most rewarding projects and grow with us.
+                </p>
               </div>
-            ))}
+
+              <div style={{ marginBottom: "30px" }}>
+                <div
+                  style={{ display: "flex", flexDirection: "row", gap: "3%" }}
+                >
+                  <img
+                    src="/bullet-point.png"
+                    alt=""
+                    style={{ marginTop: "10px" }}
+                  />
+                  <span style={{ fontWeight: "bold" }}>
+                    Access our Client Network
+                  </span>
+                </div>
+
+                <p style={{ fontSize: "22px", marginLeft: "45px" }}>
+                  With over 2500 clients from 15 industries, get the opportunity
+                  to take up the most rewarding projects and grow with us.
+                </p>
+              </div>
+
+              <div style={{ marginBottom: "30px" }}>
+                <div
+                  style={{ display: "flex", flexDirection: "row", gap: "3%" }}
+                >
+                  <img
+                    src="/bullet-point.png"
+                    alt=""
+                    style={{ marginTop: "10px" }}
+                  />
+                  <span style={{ fontWeight: "bold" }}>
+                    Access our Client Network
+                  </span>
+                </div>
+
+                <p style={{ fontSize: "22px", marginLeft: "45px" }}>
+                  With over 2500 clients from 15 industries, get the opportunity
+                  to take up the most rewarding projects and grow with us.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+
+      <div className="board">
+        <div className="board-header">
+          <h2>How to get on board with us</h2>
+        </div>
+        <div className="main-cards">
+          <div>
+            <div className="card-sign">
+              <div className="step-badge">
+                <div>Step 1</div>
+              </div>
+              <div className="icon">
+                <img src="/user.png" alt="icon" />
+              </div>
+              <h3>
+                Free <br /> sign-up
+              </h3>
+              <p>
+                Register on our Partner Dashboard and have your contact details
+                verified instantly.
+              </p>
+            </div>
+          </div>
+          <div className="next-step-img">
+            <img src="/right.png" alt="" />
+          </div>
+          <div>
+            <div className="card-sign">
+              <div className="step-badge">
+                <div>Step 2</div>
+              </div>
+              <div className="icon">
+                <img src="/user.png" alt="icon" />
+              </div>
+              <h3>
+                Free <br /> sign-up
+              </h3>
+              <p>
+                Register on our Partner Dashboard and have your contact details
+                verified instantly.
+              </p>
+            </div>
+          </div>
+          <div className="next-step-img">
+            <img src="/right.png" alt="" />
+          </div>
+          <div>
+            <div className="card-sign">
+              <div className="step-badge">
+                <div>Step 3</div>
+              </div>
+              <div className="icon">
+                <img src="/user.png" alt="icon" />
+              </div>
+              <h3>
+                Free <br /> sign-up
+              </h3>
+              <p>
+                Register on our Partner Dashboard and have your contact details
+                verified instantly.
+              </p>
+            </div>
+          </div>
+          <div className="next-step-img">
+            <img src="/right.png" alt="" />
+          </div>
+          <div>
+            <div className="card-sign">
+              <div className="step-badge">
+                <div>Step 4</div>
+              </div>
+              <div className="icon">
+                <img src="/user.png" alt="icon" />
+              </div>
+              <h3>
+                Free <br /> sign-up
+              </h3>
+              <p>
+                Register on our Partner Dashboard and have your contact details
+                verified instantly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="container"
+        style={{ width: "100%", maxWidth: "100%", padding: "0" }}
+      >
+        <div
+          className="content-container"
+          style={{ flexDirection: "column", width: "50%" }}
+        >
+          <div>
+            <h2>Join our Preferred Partners Programme</h2>
+          </div>
+          <div>
+            <p>
+              We proudly offer exclusive benefits to our partners who have
+              consistently shown trust in our platform and delivered outstanding
+              work.
+            </p>
+          </div>
+          <div>
+            These privileges are designed to ensure business stability and
+            promise up to 3x returns to our partners.
+          </div>
+        </div>
+        <div>
+          <img src="/join.png" alt="" />
+        </div>
+      </div>
+
+        
+
+      <div className="testimonial-container-algo">
+      {/* Heading */}
+      <h1 className="testimonial-heading-algo">
+        Driving results for leaders across the globe
+      </h1>
+
+      {/* Company Logo */}
+      <div className="company-logo-algo">
+        <img
+          src="/brand.png" // Replace with the actual logo URL
+          alt="Algosoft Logo"
+        />
+      </div>
+
+      {/* Testimonial Text */}
+      <p className="testimonial-text-algo">
+        "Our association with EMB Global has carved out new revenue streams for
+        our company by enabling us to take on unlimited projects which we had
+        to give up earlier due to bandwidth or unserviceability."
+      </p>
+
+      {/* Author Details */}
+      <div className="testimonial-author-algo">
+        <p className="author-name">Vivek</p>
+        <p className="author-designation">Director, Algosoft</p>
+      </div>
+    </div>
+
+
+      <div className="slider-container-algo-outer">
+        <div className="left-button">
+        <button
+          className="slider-button-algo left"
+          onClick={handlePrevContainer}
+        >
+          -
+        </button>
+        </div>
+  
+        <div className="slider-container-algo"> 
+          <div className="slider-algo">
+            <div
+              className="slider-track-algo"
+              style={{
+                transform: `translateX(-${currentIndexContainer * 100}%)`,
+              }}
+            >
+              <Container number={1} />
+              <Container number={2} />
+              <Container number={3} />
+            </div>
+          </div>
+        </div>
+        <div className="right-button">
+        <button
+          className="slider-button-algo right"
+          onClick={handleNextContainer}
+        >
+          +
+        </button>
+        </div>
+        
+      </div>
+
+      <div>
+        <Blog></Blog>
       </div>
     </>
   );

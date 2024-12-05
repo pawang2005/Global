@@ -3,23 +3,19 @@ import "./Carousel.component.css";
 
 const Card = ({ title, content, image }) => (
   <div className="cards">
-    <h3
-      className="card-t"
-      style={{ margin: "10px", fontSize: "20px", fontWeight: "100" }}
-    >
-      {title}
-    </h3>
-    <h3
-      className="card-content"
-      style={{ margin: "10px", fontSize: "30px", fontWeight: "400" }}
-    >
-      {content}
-    </h3>
-    <img src={image} alt={title} className="card-image" />
+    <div className="services" style={{ width: "330px" }}>
+      <div className="digital-content">
+        <span>{title}</span>
+        <p>{content}</p>
+      </div>
+      <div>
+        <img src={image} alt="" />
+      </div>
+    </div>
   </div>
 );
 
-const Carousel = ({ cards, interval = 2000, cardsperslide = 1 }) => {
+const Carousel = ({ cards, interval = 2000, cardsperslide }) => {
   const [currentIndex, setCurrentIndex] = useState(cardsperslide);
   const [isAnimating, setIsAnimating] = useState(false);
   const totalSlides = cards.length;
@@ -31,7 +27,7 @@ const Carousel = ({ cards, interval = 2000, cardsperslide = 1 }) => {
     ...cards,
     ...cards.slice(0, cardsperslide), // Clone first cards at the end
   ];
-
+  console.log(clonedCards);
   const handlePrev = () => {
     if (isAnimating) return; // Prevent animation interruptions
     setIsAnimating(true);
@@ -66,17 +62,17 @@ const Carousel = ({ cards, interval = 2000, cardsperslide = 1 }) => {
         }
       }, 300); // Match with CSS transition duration
       return () => clearTimeout(timeout);
-    } 
+    }
   }, [currentIndex, totalSlides, cardsperslide, isAnimating]);
 
   return (
     <>
-      <div className="carousel-wrapper" ref={carouselRef}>
+      <div className="carousel-wrapper-c" ref={carouselRef}>
         <div
           className="carousel-cards"
           style={{
             transform: `translateX(-${
-              (currentIndex * 100) / cardsperslide
+              (currentIndex * 100) / cardsperslide + 1
             }%)`,
             transition: isAnimating ? "transform 0.3s ease-in-out" : "none",
           }}
