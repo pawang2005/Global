@@ -1,54 +1,61 @@
+/* Wrapper for the entire carousel */
 .carousel-wrapper {
-  overflow: hidden;
-  width: 100%;
-  margin-top: 30px;
-}
-
-
-.carousel-cardss {
+  overflow: hidden; /* Ensures only visible cards are shown */
+  width: 100%; /* Occupy full width of the container */
+  /* position: relative; */
   display: flex;
-  gap: 30px;
-  transition: transform 0.5s ease-in-out; 
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
+/* Container for all cards */
+.carousel-cards {
+  display: flex; /* Arrange cards in a row */
+  transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
+  will-change: transform; /* Optimize performance */
+}
+
+/* Individual card styling */
 .cards {
-  flex: 0 0 calc(25% - 30px); 
+  flex: 0 0 calc(100% / 4); /* Dynamically adjust based on cards per slide */
+  /* max-width: calc(100% / 4); */
+  box-sizing: border-box;
+  margin-right: 20px;
+  padding: 10px;
+  width: 50px;
   background-color: #fff;
-  height: 400px;
-  width: 90px;
-  border: 1px solid black;
   border-radius: 5%;
-  position: relative;
 }
 
-.cards img {
-  position: absolute;
-  bottom: 0;
-  height: 50%;
+/* Image inside each card */
+.card-image {
   width: 100%;
+  height: auto;
+  border-radius: 10px;
   object-fit: cover;
 }
 
+/* Arrow buttons styling */
 .arrow-content {
   display: flex;
   justify-content: center;
-  gap: 2%;
-  margin-top: 20px;
+  transform: translateY(-50%);
 }
 
 .arrow-content .prev-item,
 .arrow-content .next-item {
-  height: 70px;
-  width: 70px;
-  font-size: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
   border-radius: 50%;
-  background-color: #fff;
-  color: black;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .arrow-content .prev-item:hover,
 .arrow-content .next-item:hover {
-  background-color: #11a64a;
-  color: #fff;
+  background-color: #fff;
+  color: black;
 }

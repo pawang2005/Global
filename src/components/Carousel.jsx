@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Carousel.component.css";
+
 const Card = ({ title, content, image }) => (
   <div className="cards">
     <h3
@@ -18,43 +19,69 @@ const Card = ({ title, content, image }) => (
   </div>
 );
 
-const Carousel = ({ cards, interval = 2000 }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsPerSlide = 4;
+const Carousel = ({ cards, interval = 2000, cardsperslide = 1 }) => {
+  const [currentIndex, setCurrentIndex] = useState(cardsperslide);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const totalSlides = cards.length;
+  const carouselRef = useRef(null);
+
+  // Create a seamless loop by duplicating cards
+  const clonedCards = [
+    ...cards.slice(-cardsperslide), // Clone last cards at the beginning
+    ...cards,
+    ...cards.slice(0, cardsperslide), // Clone first cards at the end
+  ];
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => {
-      const newIndex = prev - 1;
-      // If the new index is less than 0, go to the last card
-      return newIndex < 0 ? cards.length - 1 : newIndex;
-    });
+    if (isAnimating) return; // Prevent animation interruptions
+    setIsAnimating(true);
+    setCurrentIndex((prev) => prev - 1);
   };
 
   const handleNext = () => {
-    setCurrentIndex((prev) => {
-      const newIndex = prev + 1;
-      // If the new index exceeds the last card, wrap around to the first card
-      return newIndex >= cards.length ? 0 : newIndex;
-    });
+    if (isAnimating) return; // Prevent animation interruptions
+    setIsAnimating(true);
+    setCurrentIndex((prev) => prev + 1);
   };
+
   useEffect(() => {
     const slideInterval = setInterval(() => {
       handleNext(); // Automatically move to the next card
     }, interval);
 
     return () => clearInterval(slideInterval); // Clean up on unmount
-  }, [currentIndex, interval]);
+  }, [interval]);
+
+  // Handle seamless looping
+  useEffect(() => {
+    if (isAnimating) {
+      const timeout = setTimeout(() => {
+        setIsAnimating(false);
+
+        // Snap to the original cards when reaching the cloned ones
+        if (currentIndex === 0) {
+          setCurrentIndex(totalSlides);
+        } else if (currentIndex === totalSlides + cardsperslide) {
+          setCurrentIndex(cardsperslide);
+        }
+      }, 300); // Match with CSS transition duration
+      return () => clearTimeout(timeout);
+    } 
+  }, [currentIndex, totalSlides, cardsperslide, isAnimating]);
 
   return (
     <>
-      <div className="carousel-wrapper">
+      <div className="carousel-wrapper" ref={carouselRef}>
         <div
-          className="carousel-cardss"
+          className="carousel-cards"
           style={{
-            transform: `translateX(-${(currentIndex / cardsPerSlide) * 100}%)`,
+            transform: `translateX(-${
+              (currentIndex * 100) / cardsperslide
+            }%)`,
+            transition: isAnimating ? "transform 0.3s ease-in-out" : "none",
           }}
         >
-          {cards.map((card, index) => (
+          {clonedCards.map((card, index) => (
             <Card key={index} {...card} />
           ))}
         </div>

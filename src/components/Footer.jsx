@@ -76,9 +76,9 @@ const Footer = () => {
             <a href="#insights">Insights</a>
             <a href="#careers">Careers</a>
             <a href="#partners">For Partners</a>
-            <a href="#grievance">Grievance Redressal Policy</a>
-            <a href="#terms">Terms and Conditions</a>
-            <a href="#privacy">Privacy Policy</a>
+            <a href="/grievance-redressal-policy">Grievance Redressal Policy</a>
+            <a href="/terms-and-conditions">Terms and Conditions</a>
+            <a href="/privacy-policy">Privacy Policy</a>
           </div>
           <p style={{fontSize: "20px"}}>Copyright © 2024 Mantarav Private Limited. All Rights Reserved.</p>
         </div>

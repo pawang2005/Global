@@ -9,15 +9,13 @@ const Header = () => {
   };
   return (
     <>
-      <link
-        href="https://cdn.prod.website-files.com/6594b3bb27ede6e1104d3b10/css/expand-my-business-new.webflow.86e9194f2.min.css"
-        rel="stylesheet"
-        type="text/css"
-      ></link>
       <header className="header">
+        <a href="/">
         <div className="log">
-          <img src="/emb.png" alt="EMB Global" />
+         <img src="/emb.png" alt="EMB Global" />
         </div>
+        </a>
+        
         <nav className="nav">
           <div className="nav-item dropdown">
             <div className="content">
@@ -95,13 +93,13 @@ const Header = () => {
               ></div>
             </div>
             <div className="dropdown-menu">
-              <a href="#emerging-tech">
+              <a href="/work-with-us">
                 <div className="dropdown-item">
                   <img src="/blog.png" alt="" />
                   <span>Work with us</span>
                 </div>
               </a>
-              <a href="#emerging-tech">
+              <a href="/partner">
                 <div className="dropdown-item">
                   <img src="/partner.png" alt="" />
                   <span>Apply as a Partner Agency</span>

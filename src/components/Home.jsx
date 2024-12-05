@@ -1,8 +1,42 @@
 import "./Home.component.css";
-import Header from "./Header";
-import Carousel from "./Carousel";
-const Home = () => {
 
+import Carousel from "./Carousel";
+import DrivingResult from "./DrivingResult";
+const Home = () => {
+  const DrivingResultData = [
+    {
+      image: "/discover.png",
+      content:
+        "“1 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
+      name: "Pawan",
+      position: "CEO",
+      progress: "Agent Shortlisting",
+    },
+    {
+      image: "/discover.png",
+      content:
+        "“2 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
+      name: "Pawan",
+      position: "CEO",
+      progress: "Agent Shortlisting",
+    },
+    {
+      image: "/discover.png",
+      content:
+        "“3 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
+      name: "Pawan",
+      position: "CEO",
+      progress: "Agent Shortlisting",
+    },
+    {
+      image: "/discover.png",
+      content:
+        "“4 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
+      name: "Pawan",
+      position: "CEO",
+      progress: "Agent Shortlisting",
+    },
+  ];
   const DigitalContent = [
     {
       span: "Discover the Best Agencies",
@@ -23,71 +57,81 @@ const Home = () => {
   const global = {
     project: 4500,
     client: 2500,
-    country:23,
-  }
+    country: 23,
+  };
 
   const cardsData = [
     {
-      title: 'Software Development1',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
+      title: "Software Development1",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
     },
     {
-      title: 'Software Development2',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
+      title: "Software Development2",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
     },
     {
-      title: 'Software Development3',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
+      title: "Software Development3",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
     },
     {
-      title: 'Software Development4',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
+      title: "Software Development4",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
     },
     {
-      title: 'Software Development5',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
+      title: "Software Development5",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
     },
     {
-      title: 'Software Development6',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
+      title: "Software Development6",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
     },
     {
-      title: 'Software Development7',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
-    },   
+      title: "Software Development7",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
+    },
     {
-      title: 'Software Development8',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
-    },   
+      title: "Software Development8",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
+    },
     {
-      title: 'Software Development9',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
-    },   
+      title: "Software Development9",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
+    },
     {
-      title: 'Software Development10',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
-    },   
+      title: "Software Development10",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
+    },
     {
-      title: 'Software Development11',
-      content: 'A mental health startup leveraged a mobile app for  patient interaction',
-      image: '/discover.png',
-    },    
+      title: "Software Development11",
+      content:
+        "A mental health startup leveraged a mobile app for  patient interaction",
+      image: "/discover.png",
+    },
   ];
   return (
     <>
-      <Header></Header>
       <div className="container">
-        <div className="content-container">
+        <div className="content-container" style={{flexDirection:"column"}}>
           <div>
             <h2>Empowering businesses on their digital journey</h2>
           </div>
@@ -189,7 +233,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-
+ 
         <div className="global-img">
           <img src="/global.gif" alt="" />
         </div>
@@ -197,23 +241,59 @@ const Home = () => {
 
       <div className="case">
         <div className="case-studies">
-          <h3 style={{color:"lightgray"}}>Case Studies</h3>
+          <h3 style={{ color: "lightgray" }}>Case Studies</h3>
         </div>
         <div className="explore-impact">
-          <h2 style={{color:"#fff"}}>Explore the impact we've delivered</h2>
+          <h2 style={{ color: "#fff" }}>Explore the impact we've delivered</h2>
         </div>
         <div>
-          <button className="contact-sales">View All →</button>
-        </div>  
+          <button className="contact-sales" style={{ marginBottom: "20px" }}>
+            View All →
+          </button>
+        </div>
         <div className="carousel-container">
-          {
-            console.log(cardsData)
-          }
-          <Carousel cards={cardsData} />
+          {console.log(cardsData)}
+          <Carousel cards={cardsData} cardsperslide={4} />
         </div>
       </div>
-      
-      <div>
+
+      <div className="driving">
+        <div className="driving-impact">
+          <div className="driving-impact-header">
+            <h2>Driving results for leaders across the globe</h2>
+          </div>
+
+          <div className="driving-container">
+            <DrivingResult
+              DrivingResultData={DrivingResultData}
+            ></DrivingResult>
+          </div>
+        </div>
+      </div>
+
+      <div className="blog-container">
+        <div className="blog">
+          <h3>Blogs</h3>
+          <h2>Learning how Technology can help you grow</h2>
+          <p>
+            We bring you the latest insights in the tech industry. Stay at the
+            forefront of technology trends and discover how to thrive in the
+            digital era.
+          </p>
+          <button>View More →</button>
+        </div>
+        <div className="blog-carousel">
+          <Carousel cards={cardsData} cardsperslide={3} />
+        </div>
+      </div>
+
+      <div className="accomplish">
+        <div className="accomplish-content">
+          <h2>See all that you can accomplish with EMB Global</h2>
+          <div>
+            <button className="contact-sales">Contact Sales →</button>
+          </div>
+        </div>
       </div>
     </>
   );
