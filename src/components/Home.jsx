@@ -3,7 +3,14 @@ import Blog from "./Blog";
 import Carousel from "./Carousel";
 import DrivingResult from "./DrivingResult";
 import BrandSlider from "./BrandSlider";
+import { useState } from "react";
+import Form from "./Form";
 const Home = () => {
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const toggleFormVisibility = () => {
+    console.log("Toggling Form:", !isFormVisible); // Debugging
+    setIsFormVisible(!isFormVisible);
+  };
   const cardsData = [
     {
       title: "Software Development1",
@@ -131,7 +138,7 @@ const Home = () => {
   return (
     <>
       <div className="container">
-        <div className="content-container" style={{ flexDirection: "column" }}>
+        <div className="content-container">
           <div>
             <h2>Empowering businesses on their digital journey</h2>
           </div>
@@ -142,8 +149,18 @@ const Home = () => {
             </h3>
           </div>
           <div>
-            <button className="contact-sales">Contact Sales →</button>
+            <button className="contact-sales" onClick={toggleFormVisibility} style={{cursor:"pointer"}}>
+              Contact Sales →
+            </button>
           </div>
+
+          {<>
+            <Form
+              isFormVisible={isFormVisible}
+              onClose={() => setIsFormVisible(false)}
+            />
+            </>
+          }
         </div>
         <div className="image-container">
           <img src="/empowering.png" alt="" />
@@ -267,16 +284,26 @@ const Home = () => {
           <p style={{ marginBottom: "40px" }}>
             Teams large and small rely on EMB
           </p>
-          <div style={{marginBottom:"40px"}}>
-            <button className="contact-sales">Contact Sales →</button>
+          <div>
+            <button className="contact-sales" onClick={toggleFormVisibility} style={{cursor:"pointer", marginBottom:"20px"}}>
+              Contact Sales →
+            </button>
           </div>
-          
+
+          {<>
+            <Form
+              isFormVisible={isFormVisible}
+              onClose={() => setIsFormVisible(false)}
+            />
+            </>
+          }
+
           <div
             style={{
               display: "flex",
               flexDirection: "row",
               justifyContent: "space-between",
-              width:"100%"
+              width: "100%",
             }}
           >
             <div>
@@ -301,11 +328,7 @@ const Home = () => {
             <h2>Driving results for leaders across the globe</h2>
           </div>
 
-          <div className="driving-container">
-            <DrivingResult
-              DrivingResultData={DrivingResultData}
-            ></DrivingResult>
-          </div>
+          <DrivingResult DrivingResultData={DrivingResultData}></DrivingResult>
         </div>
       </div>
 

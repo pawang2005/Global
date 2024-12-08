@@ -1,9 +1,9 @@
 /* Wrapper for the entire carousel */
 .carousel-wrapper-c {
   overflow: hidden; /* Ensures only visible cards are shown */
-  width: 100%; /* Occupy full width of the container */
+  width: 95%; /* Occupy full width of the container */
   /* position: relative; */
-  height: 560px;
+  height: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
@@ -14,14 +14,16 @@
   display: flex; /* Arrange cards in a row */
   transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
   will-change: transform; /* Optimize performance */
+  gap: 2%;
 }
 
 /* Individual card styling */
 .cards {
   flex: 0 0 calc(100% / 4); 
   box-sizing: border-box;
-  margin: 20px;
-  width: 50px;
+  margin: 15px;
+  width: 40px;
+  padding-right: 20px;
   border-radius: 5%;
 }
 

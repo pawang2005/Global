@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Form.component.css";
 
-function Form({ isFormVisible }) {
+function Form({ isFormVisible, onClose }) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -28,22 +28,26 @@ function Form({ isFormVisible }) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleCheckboxChange = (service) => {
+  const handleServiceClick = (service) => {
     setFormData((prevState) => {
-      const services = prevState.servicesRequired.includes(service)
+      const isSelected = prevState.servicesRequired.includes(service);
+
+      // Add or remove the service from the list
+      const updatedServices = isSelected
         ? prevState.servicesRequired.filter((s) => s !== service)
         : [...prevState.servicesRequired, service];
-      return { ...prevState, servicesRequired: services };
+
+      return { ...prevState, servicesRequired: updatedServices };
     });
   };
 
-  const [isFormVisibleIN, setIsFormVisibleIN] = useState(isFormVisible);
+  if (!isFormVisible) return null;
 
   return (
-    <>
+    <>{ 
       <div
         className="form_bg_container"
-        style={{ display: isFormVisibleIN ? "flex" : "none" }}
+        style={{ display: isFormVisible ? "flex" : "none" }}
       >
         <div className="form-container">
           <div
@@ -56,9 +60,9 @@ function Form({ isFormVisible }) {
             <h2>Let’s get started!</h2>{" "}
             <button
               style={{ background: "#fff" }}
-              onClick={() => {
-                setIsFormVisibleIN(!isFormVisible);
-              }}
+              
+                onClick={onClose}
+              
             >
               x
             </button>
@@ -179,7 +183,18 @@ function Form({ isFormVisible }) {
                 <div className="checkbox-container">
                   {services && services.length > 0 ? (
                     services.map((service, index) => (
-                      <div key={index}>
+                      <div key={index} onClick={() => handleServiceClick(service)}  style={{
+                        border: formData.servicesRequired.includes(service)
+                          ? "2px solid #007BFF"
+                          : "1px solid #e1e1e1",
+                        backgroundColor: formData.servicesRequired.includes(service)
+                          ? "#cce5ff"
+                          : "#fafafa",
+                        color: formData.servicesRequired.includes(service)
+                          ? "#004085"
+                          : "black",
+                        cursor: "pointer",
+                      }}>
                         <span
                           style={{
                             padding: "10px;",
@@ -231,6 +246,7 @@ function Form({ isFormVisible }) {
           </div>
         </div>
       </div>
+}
     </>
   );
 }

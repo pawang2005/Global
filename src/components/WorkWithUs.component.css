@@ -16,29 +16,27 @@
   text-align: center;
 }
 
-.content-container{
+.content-containers{
   display: flex;
   flex-direction: row;
   width: 100%;
+  margin: 20px 20px;
 }
 
-.content-container .image-container{
+.content-containers .image-containers{
   width: 50%;
 }
 
-.content-container .context{
+.content-containers .context{
   width: 50%;
   padding: 40px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 
-.content-container .context h3{
-  font-weight: bold;
-
-}
-.content-container .context p {
+.content-containers .context p {
   font-size: 20px;
 }
 

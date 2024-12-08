@@ -56,29 +56,23 @@ const BrandSlider = () => {
         } else if (currentIndex === totalSlides + cardsperslide) {
           setCurrentIndex(cardsperslide);
         }
-      }, 300); // Match with CSS transition duration
+      }, 300); 
       return () => clearTimeout(timeout);
     }
   }, [currentIndex, totalSlides, cardsperslide, isAnimating]);
- return( <div className="brand-slider" ref={carouselRef}>
-          <div
-            className="slider-track"
-            style={{
-              transform: `translateX(-${
-                (currentIndex * 100) / cardsperslide
-              }%)`,
-              transition: isAnimating ? "transform 0.2s ease-in-out" : "none",
-            }}
-          >
-            {clonedCards.map((logo, index) => (
-              <div className="slide" key={index} style={{display:"flex" ,justifyContent:"center", flexDirection:"column", gap:"10px", height:"100%"}}>
-                <img src={logo.image} alt={`Brand ${index + 1}`} />
-                <img src={logo.image} alt={`Brand ${index + 1}`} />
-              </div>
-            ))}
-            
+ return( <div className="slider2">
+  <div className="slide-track2">
+    {
+      allLogos.map((logo, index)=>{
+        return (
+          <div key={index} className="slide2" >
+            <img src={logo.image} alt="" style={{padding:"0 5% 0 5%",width: "100% !important",margin: "auto !important",height: "auto !important"}} height="100" width="250" />
           </div>
-        </div>
+        )
+      })
+    }
+  </div>
+</div>
  )
 }
 

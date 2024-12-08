@@ -20,6 +20,7 @@ const Carousel = ({ cards, interval = 2000, cardsperslide }) => {
   const [isAnimating, setIsAnimating] = useState(false);
   const totalSlides = cards.length;
   const carouselRef = useRef(null);
+  let count = 0;
 
   // Create a seamless loop by duplicating cards
   const clonedCards = [
@@ -27,7 +28,6 @@ const Carousel = ({ cards, interval = 2000, cardsperslide }) => {
     ...cards,
     ...cards.slice(0, cardsperslide), // Clone first cards at the end
   ];
-  console.log(clonedCards);
   const handlePrev = () => {
     if (isAnimating) return; // Prevent animation interruptions
     setIsAnimating(true);

@@ -28,23 +28,23 @@ const Partner = () => {
   return (
     <>
       <div className="container">
-        <div className="content-container" style={{ flexDirection: "column" }}>
+        <div className="content-container">
           <div>
             <h2>Join our partner network</h2>
           </div>
           <div>
             <h3>
-              Get verified with us and like 1000+ of our partners, see your
-              agency soar by as much as 35%. Our platform is your gateway to
-              assured growth.
+            Get verified with us and like 1000+ of our partners, see your agency soar by as much as 35%. Our platform is your gateway to assured growth.
             </h3>
           </div>
           <div>
-            <button className="contact-sales">Join us →</button>
+            <button className="contact-sales" style={{cursor:"pointer"}}>
+              Join Us →
+            </button>
           </div>
         </div>
         <div className="image-container">
-          <img src="/partners.png" alt="" />
+          <img src="/empowering.png" alt="" />
         </div>
       </div>
       <div className="brands">
