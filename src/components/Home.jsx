@@ -1,3 +1,5 @@
+
+
 import "./Home.component.css";
 import Blog from "./Blog";
 import Carousel from "./Carousel";
@@ -5,12 +7,14 @@ import DrivingResult from "./DrivingResult";
 import BrandSlider from "./BrandSlider";
 import { useState } from "react";
 import Form from "./Form";
+
 const Home = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const toggleFormVisibility = () => {
-    console.log("Toggling Form:", !isFormVisible); // Debugging
+    console.log("Toggling Form:", !isFormVisible);
     setIsFormVisible(!isFormVisible);
   };
+
   const cardsData = [
     {
       title: "Software Development1",
@@ -135,87 +139,68 @@ const Home = () => {
     client: 2500,
     country: 23,
   };
+
   return (
     <>
       <div className="container">
         <div className="content-container">
-          <div>
-            <h2>Empowering businesses on their digital journey</h2>
-          </div>
-          <div>
-            <h3>
-              We help businesses unlock exponential growth by finding the right
-              tech solutions.
-            </h3>
-          </div>
-          <div>
-            <button className="contact-sales" onClick={toggleFormVisibility} style={{cursor:"pointer"}}>
-              Contact Sales →
-            </button>
-          </div>
-
-          {<>
+          <h2>Empowering businesses on their digital journey</h2>
+          <h3>
+            We help businesses unlock exponential growth by finding the right
+            tech solutions.
+          </h3>
+          <button className="contact-sales" onClick={toggleFormVisibility}>
+            Contact Sales →
+          </button>
+          {isFormVisible && (
             <Form
               isFormVisible={isFormVisible}
               onClose={() => setIsFormVisible(false)}
             />
-            </>
-          }
+          )}
         </div>
         <div className="image-container">
-          <img src="/empowering.png" alt="" />
+          <img src="/empowering.png" alt="Empowering businesses" />
         </div>
       </div>
+
       <div className="trust">
-        <div className="trust-content">
-          <h2>Trusted by the best in the business</h2>
-        </div>
-        <div class="brand-slider-logo">
-          <BrandSlider></BrandSlider>
+        <h2>Trusted by the best in the business</h2>
+        <div className="brand-slider-logo">
+          <BrandSlider />
         </div>
       </div>
 
       <div className="digital">
-        <div className="digital-context">
-          <h1>Digital transformation simplified.</h1>
-        </div>
+        <h1>Digital transformation simplified.</h1>
       </div>
+
       <div className="main-service">
-        {DigitalContent.map((item, index) => {
-          return (
-            <div className="services" key={index}>
-              <div className="dummy">
-                <div className="digital-content">
-                  <span>{item.span}</span>
-                  <p>{item.p}</p>
-                </div>
-                <div>
-                  <img src={item.img} alt="" />
-                </div>
+        {DigitalContent.map((item, index) => (
+          <div className="services" key={index}>
+            <div className="dummy">
+              <div className="digital-content">
+                <span>{item.span}</span>
+                <p>{item.p}</p>
+              </div>
+              <div>
+                <img src={item.img} alt="" />
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
+
       <div className="additional-content">
         <div className="global-scale-content">
-          <div>
-            <p>Global Scale</p>
-          </div>
-          <br />
-          <div>
-            <h1>Making tech accessible for the world.</h1>
-          </div>
-          <br />
-          <div>
-            <h3>
-              We guide global businesses through the challenges of developing
-              purposeful technology that addresses their needs and advances
-              their growth. We have established offices in India, the UAE, and
-              the USA.
-            </h3>
-          </div>
-          <br />
+          <p>Global Scale</p>
+          <h1>Making tech accessible for the world.</h1>
+          <h3>
+            We guide global businesses through the challenges of developing
+            purposeful technology that addresses their needs and advances
+            their growth. We have established offices in India, the UAE, and
+            the USA.
+          </h3>
           <div className="served">
             <div>
               <span>{global.project}+</span>
@@ -230,93 +215,66 @@ const Home = () => {
               <p>Countries Served</p>
             </div>
           </div>
-          <br />
           <div className="Backed">
-            <div style={{ marginTop: "10px" }}>Backed By</div>
-            <div>
-              <img
-                src="https://cdn.prod.website-files.com/6594b3bb27ede6e1104d3b10/66af714c44e5f8acd220c6e6_661f79a9b7b904f276ace43e_image5011-ezgif.com-resize.avif"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn.prod.website-files.com/6594b3bb27ede6e1104d3b10/66af738938dcfa7bd878c2a1_661f7dbb43b149567f956eee_image503-ezgif.com-resize.avif"
-                alt=""
-              />
-            </div>
-            <div>
-              <img
-                src="https://cdn.prod.website-files.com/6594b3bb27ede6e1104d3b10/66af73b4b535bb186baf0ba3_661f7dd60220d4817cb232d6_Tanglin1-ezgif.com-resize.avif"
-                alt=""
-              />
+            <div>Backed By</div>
+            <div className="backed-images">
+              <img src="https://cdn.prod.website-files.com/6594b3bb27ede6e1104d3b10/66af714c44e5f8acd220c6e6_661f79a9b7b904f276ace43e_image5011-ezgif.com-resize.avif" alt="" />
+              <img src="https://cdn.prod.website-files.com/6594b3bb27ede6e1104d3b10/66af738938dcfa7bd878c2a1_661f7dbb43b149567f956eee_image503-ezgif.com-resize.avif" alt="" />
+              <img src="https://cdn.prod.website-files.com/6594b3bb27ede6e1104d3b10/66af73b4b535bb186baf0ba3_661f7dd60220d4817cb232d6_Tanglin1-ezgif.com-resize.avif" alt="" />
             </div>
           </div>
         </div>
-
         <div className="global-img">
-          <img src="/global.gif" alt="" />
+          <img src="/global.gif" alt="Global reach" />
         </div>
       </div>
 
       <div className="case">
         <div className="case-studies">
-          <h3 style={{ color: "lightgray" }}>Case Studies</h3>
+          <h3>Case Studies</h3>
         </div>
         <div className="explore-impact">
-          <h2 style={{ color: "#fff" }}>Explore the impact we've delivered</h2>
+          <h2>Explore the impact we've delivered</h2>
         </div>
         <div>
-          <button className="contact-sales" style={{ marginBottom: "20px" }}>
-            View All →
-          </button>
+          <button className="view-all">View All →</button>
         </div>
         <div className="carousel-container-c">
           <Carousel cards={cardsData} cardsperslide={4} />
         </div>
       </div>
 
-      <div className="accomplish" style={{ background: "#fff" }}>
+      <div className="accomplish">
         <div className="accomplish-content">
-          <h2 style={{ color: "black" }}>
+          <h2>
             We are big enough to deliver and small enough to care
           </h2>
-          <p style={{ marginBottom: "40px" }}>
-            Teams large and small rely on EMB
-          </p>
-          <div>
-            <button className="contact-sales" onClick={toggleFormVisibility} style={{cursor:"pointer", marginBottom:"20px"}}>
-              Contact Sales →
-            </button>
-          </div>
-
-          {<>
+          <p>Teams large and small rely on EMB</p>
+          <button className="contact-sales" onClick={toggleFormVisibility}>
+            Contact Sales →
+          </button>
+          {isFormVisible && (
             <Form
               isFormVisible={isFormVisible}
               onClose={() => setIsFormVisible(false)}
             />
-            </>
-          }
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              width: "100%",
-            }}
-          >
+          )}
+          <div className="stats">
             <div>
-              9.4/10 <br /> Customer Satisfaction
+              <span>9.4/10</span>
+              <p>Customer Satisfaction</p>
             </div>
             <div>
-              120 + <br /> Tech Stacks
+              <span>120 +</span>
+              <p>Tech Stacks</p>
             </div>
             <div>
-              30 % <br /> Reduction in Delivery Time
+              <span>30 %</span>
+              <p>Reduction in Delivery Time</p>
             </div>
             <div>
-              70 % <br /> Repeat Customers
+              <span>70 %</span>
+              <p>Repeat Customers</p>
             </div>
           </div>
         </div>
@@ -327,12 +285,11 @@ const Home = () => {
           <div className="driving-impact-header">
             <h2>Driving results for leaders across the globe</h2>
           </div>
-
-          <DrivingResult DrivingResultData={DrivingResultData}></DrivingResult>
+          <DrivingResult DrivingResultData={DrivingResultData} />
         </div>
       </div>
 
-      <Blog></Blog>
+      <Blog />
     </>
   );
 };

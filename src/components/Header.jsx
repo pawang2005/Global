@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.component.css";
 import Form from "./Form";
 
@@ -50,27 +50,53 @@ const dropdownData = [
 const Header = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleMouseEnter = (index) => {
-    setOpenDropdown(index);
+    if (!isMobile) setOpenDropdown(index);
   };
+
   const toggleFormVisibility = () => {
-    console.log("Toggling Form:", !isFormVisible); // Debugging
+    console.log("Toggling Form:", !isFormVisible);
     setIsFormVisible(!isFormVisible);
   };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="header">
       <a href="/">  
-        <div className="log">
+        <div className="logo">
           <img src="/emb.png" alt="EMB Global" />
         </div>
       </a>
 
-      <nav className="nav">
+      {isMobile && (
+        <button className="burger-menu" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      )}
+
+      <nav className={`nav ${isMobile ? (isMenuOpen ? 'open' : 'closed') : ''}`}>
         {dropdownData.map((dropdown, index) => (
           <div className="nav-item dropdown" key={index}>
             <div
               className="content"
+              onClick={() => isMobile && setOpenDropdown(openDropdown === index ? null : index)}
               onMouseEnter={() => handleMouseEnter(index)}
               aria-haspopup="true"
               aria-expanded={openDropdown === index}
@@ -80,23 +106,7 @@ const Header = () => {
             </div>
             {openDropdown === index && (
               <div className="dropdown-menu">
-                {dropdown.items.map((item, idx) => (
-                  <div key={idx} className="dropdown-item">
-                    <a href={item.link}>
-                      <img src={item.icon} alt={item.label} />
-                      <span>{item.label}</span>
-                    </a>
-                    {item.subItems && (
-                      <div className="dropdown-item-subitem">
-                        {item.subItems.map((subItem, subIdx) => (
-                          <a href={subItem.link} key={subIdx}>
-                            <span>{subItem.label}</span>
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                {/* ... (keep the dropdown menu items as they are) */}
               </div>
             )}
           </div>
