@@ -1,237 +1,300 @@
-.container{
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styles */
+.container {
   display: flex;
   flex-direction: row;
   margin: 0px;
   justify-content: center;
+  width: 100%;
+  overflow: hidden;
 }
 
-.content-container{
+.content-container {
   margin: 80px 20px;
   display: flex;
   flex-direction: column;
+  max-width: 600px;
 }
-.content-container div{
+
+.content-container div {
   padding: 20px;
 }
 
-.image-container{
-  width: 100%;
+.image-container {
+  width: 50%;
 }
 
-.trust{
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Trust section */
+.trust {
   margin-top: 100px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding: 0 20px;
 }
-.brand-slider-logo{
-  margin-left: 140px;
+
+.brand-slider-logo {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
 }
-.digital-context{
-  margin-top: 50px;
-  color: #fff;
- 
-}
+
+/* Digital section */
 .digital {
   margin-top: 0;
-  height: 650px;
+  min-height: 650px;
   background-color: black;
   display: flex;
   justify-content: center;
-  /* position: sticky; */
-  /* top: 0; */
-  /* z-index: -1; */
+  width: 100%;
+  padding: 20px;
 }
-.digital-content{
-  padding: 20px 30px;
+
+.digital-context {
+  margin-top: 50px;
+  color: #fff;
+  text-align: center;
+}
+
+/* Services section */
+.main-service {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .services {
   background-color: #fff;
-  height: 500px;
-  width: 350px;
-  border: 1px solid black;
-  border-radius: 5%;
-  top: 10%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  /* position: sticky; */
-  z-index: 1;
-  overflow: hidden;
-  position: relative;
-  z-index: -1;
-}
-.services img {
-  position: absolute;
-  bottom: 0;
-  height: 50%;
+  height: auto;
+  min-height: 500px;
   width: 100%;
-  object-fit: cover;
+  max-width: 350px;
+  border: 1px solid black;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  margin: 10px;
 }
 
-.services span{
-  font-size: 25px;
-  font-weight: 800;
-  color: black
-}
-.services p{
-  font-size: 20px;
-  font-weight: 500;
-  color: black
-}
-
-.main-service{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
+/* Additional content section */
 .additional-content {
   margin-top: 100px;
   display: flex;
   flex-direction: row;
+  width: 100%;
+  padding: 20px;
+  gap: 20px;
 }
 
-.global-scale-content{
-  margin: 20px;
+.global-scale-content {
   width: 60%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-}
-
-.served{
-  display: flex;
-  flex-direction: row;
-  gap: 10%;
-}
-.served span{
-  font-weight: 800;
-  font-size: 40px;
-}
-.served p{
-  font-size: medium;
-}
-.Backed{
-  display: flex;
-  flex-direction: row;
-  gap: 3%;
-}
-.Backed div{
-  font-size: 15px;
-  font-weight: 650;
-}
-.Backed img{
-  height: 35px;
-  width: 150px;
-}
-.global-img{
-  margin-top: 40px;
-}
-
-.case{
-  display: flex;
-  flex-direction: column;
-  background-color: black;
-  align-items: center;
-  height: 870px;
-}
-
-.case .case-studies{
-  margin-top: 30px;
-  margin-bottom: 20px;
-  color: lightgray;
-}
-.explore-impact{
-  margin-bottom: 20px;
-}
-
-.carousel-container-c {
-  font-family: Arial, sans-serif;
-  color: #fff;
-  display: flex;
-  flex-direction: column; /* Stack arrows and cards vertically */
-  align-items: center;
-  width: 100%;
-  height: auto; 
-}
-
-
-.blog-container{
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
-  background-color: black;
-  width: 100%;
-  padding: 20px;
-}
-
-.blog{
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  width: 40%;
-}
-
-.blog h3{
-  color: #fff;
-}
-
-
-.blog h2{
-  color: #fff;
-}
-
-.blog button{
-  color: #fff;
-  background-color: black;
-  border: 1px solid #fff;
-  font-size: 15px;
-  width: 150px;
-  height: 40px;
-  transition: all 0.3s ease-in-out;
-}
-.blog button:hover{
-  background-color: #fff;
-  color: black;
-}
-.blog-carousel{
-  width: 60%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.accomplish{
-  background-color: black;
   gap: 20px;
 }
 
-.accomplish-content{
-  display: flex;  
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 100px;
-}
-.accomplish h2{
-  color: white;
-  margin-bottom: 30px;
-}
-
-
-
-.driving .driving-impact .driving-impact-header{
+/* Served section */
+.served {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 30px 0px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
+.served div {
+  flex: 1;
+  min-width: 200px;
+}
 
+/* Backed section */
+.Backed {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
 
+.Backed img {
+  height: 35px;
+  width: auto;
+  max-width: 150px;
+}
 
+/* Case studies section */
+.case {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  align-items: center;
+  width: 100%;
+  padding: 40px 20px;
+}
 
+/* Blog section */
+.blog-container {
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.blog {
+  width: 40%;
+  color: #fff;
+  padding: 20px;
+}
+
+.blog-carousel {
+  width: 60%;
+}
+
+/* Accomplish section */
+.accomplish {
+  width: 100%;
+  background-color: black;
+  padding: 40px 20px;
+}
+
+.accomplish-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Driving section */
+.driving {
+  width: 100%;
+  padding: 40px 20px;
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .global-scale-content {
+    width: 100%;
+  }
+  
+  .blog-container {
+    flex-direction: column;
+  }
+  
+  .blog, .blog-carousel {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .content-container {
+    margin: 40px 20px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .image-container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .digital {
+    padding: 40px 20px;
+  }
+
+  .main-service {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .services {
+    max-width: 100%;
+  }
+
+  .additional-content {
+    flex-direction: column;
+  }
+
+  .global-scale-content {
+    width: 100%;
+  }
+
+  .served {
+    justify-content: center;
+  }
+
+  .Backed {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content-container h2 {
+    font-size: 24px;
+  }
+
+  .content-container h3 {
+    font-size: 18px;
+  }
+
+  .services span {
+    font-size: 20px;
+  }
+
+  .services p {
+    font-size: 16px;
+  }
+
+  .served span {
+    font-size: 30px;
+  }
+
+  .accomplish-content {
+    padding: 20px;
+  }
+
+  .Backed img {
+    height: 25px;
+  }
+
+  .blog button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Utility classes for spacing */
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.p-20 {
+  padding: 20px;
+}
