@@ -6,30 +6,29 @@ const dropdownData = [
   {
     title: "Explore Services",
     items: [
-      { icon: "/emerging.png", label: "Emerging Technology", link: "#emerging-tech", subItems: [
-        { label: "Internet of Things", link: "#iot" },
-        { label: "Artificial Intelligence", link: "#ai" },
-        { label: "Blockchain", link: "#blockchain" },
-        { label: "Robotic Automation", link: "#blockchain" },
-        { label: "Digital Kiosk", link: "#blockchain" },
-        { label: "Metaverse", link: "#blockchain" },
-        { label: "Metaverse", link: "#blockchain" },
+      { icon: "/emerging.png", label: "Emerging Technology", subItems: [
+        { label: "Internet of Things", link: "/iot" },
+        { label: "Artificial Intelligence", link: "/ai" },
+        { label: "Blockchain", link: "/blockchain" },
+        { label: "Robotic Automation", link: "/robotic-animation" },
+        { label: "Digital Kiosk", link: "/digital-kiosk" },
+        { label: "Metaverse", link: "/metaverse" },
         
       ] },
       { icon: "/cloud.png", label: "Data and Cloud", link: "#data-cloud", subItems: [
-        { label: "Cost Optimiation", link: "#iot" },
-        { label: "Cybersecurity", link: "#ai" },
-        { label: "Big Data Analytics", link: "#blockchain" },   
+        { label: "Cost Optimiation", link: "/cost-optimisation" },
+        { label: "Cybersecurity", link: "/cybersecurity" },
+        { label: "Big Data Analytics", link: "/big-data=analytics" },   
         
       ] },
       { icon: "/software.png", label: "Software Development", link: "#software-dev", subItems: [
-        { label: "Apps & Websites", link: "#iot" },
-        { label: "E-Commerce", link: "#ai" },
-        { label: "ERP", link: "#blockchain" },    
-        { label: "Game Development", link: "#blockchain" },  
+        { label: "Apps & Websites", link: "/apps-and-websites" },
+        { label: "E-Commerce", link: "/e-commerce" },
+        { label: "ERP", link: "/erp" },    
+        { label: "Game Development", link: "game-development" },  
       ] },
-      { icon: "/marketing.png", label: "Marketing", link: "#marketing" },
-      { icon: "/staff.png", label: "Staff Augmentation", link: "#staff-aug" },
+      { icon: "/marketing.png", label: "Marketing", link: "/marketing" },
+      { icon: "/staff.png", label: "Staff Augmentation", link: "/staff-aug" },
     ],
   },
   {
