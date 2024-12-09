@@ -139,9 +139,14 @@
   background: #333;
   transition: all 0.3s linear;
 }
+
 @media (max-width: 768px) {
   .header {
     padding: 10px 20px;
+  }
+
+  .burger-menu {
+    display: flex;
   }
   .burger-menu {
     display: flex;
@@ -157,9 +162,11 @@
     display: none;
     padding: 20px;
   }
+
   .nav.open {
     display: flex;
   }
+
   .nav-item {
     width: 100%;
     margin-bottom: 15px;
@@ -176,20 +183,25 @@
     box-shadow: none;
     margin-left: 20px;
   }
+
   .contact-sales {
     display: none;
   }
+
   .Items {
     margin-right: 0;
   }
+
   .content {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
   .icon {
     transition: transform 0.3s ease;
   }
+
   .icon.open {
     transform: rotate(180deg);
   }
