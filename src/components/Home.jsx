@@ -3,14 +3,10 @@ import Blog from "./Blog";
 import Carousel from "./Carousel";
 import DrivingResult from "./DrivingResult";
 import BrandSlider from "./BrandSlider";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Form from "./Form";
+import ContactSaleButton from "./ContactSaleButton";
 const Home = () => {
-  const [isFormVisible, setIsFormVisible] = useState(false);
-  const toggleFormVisibility = () => {
-    console.log("Toggling Form:", !isFormVisible); // Debugging
-    setIsFormVisible(!isFormVisible);
-  };
   const cardsData = [
     {
       title: "Software Development1",
@@ -135,6 +131,35 @@ const Home = () => {
     client: 2500,
     country: 23,
   };
+
+
+
+  const [visibleIndex, setVisibleIndex] = useState(-1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const digitalSection = document.querySelector(".digital");
+      const rect = digitalSection.getBoundingClientRect();
+      const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
+
+      if (isInView) {
+        // Trigger animation to show cards one by one
+        const timer = setInterval(() => {
+          setVisibleIndex((prevIndex) => {
+            if (prevIndex < DigitalContent.length - 1) {
+              return prevIndex + 1;
+            } else {
+              clearInterval(timer); // Clear interval once all cards are visible
+              return prevIndex;
+            }
+          });
+        }, 500); // Delay between card animations
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [DigitalContent]);
   return (
     <>
       <div className="container">
@@ -149,18 +174,8 @@ const Home = () => {
             </h3>
           </div>
           <div>
-            <button className="contact-sales" onClick={toggleFormVisibility} style={{cursor:"pointer"}}>
-              Contact Sales →
-            </button>
+            <ContactSaleButton></ContactSaleButton>
           </div>
-
-          {<>
-            <Form
-              isFormVisible={isFormVisible}
-              onClose={() => setIsFormVisible(false)}
-            />
-            </>
-          }
         </div>
         <div className="image-container">
           <img src="/empowering.png" alt="" />
@@ -179,24 +194,28 @@ const Home = () => {
         <div className="digital-context">
           <h1>Digital transformation simplified.</h1>
         </div>
-      </div>
-      <div className="main-service">
-        {DigitalContent.map((item, index) => {
-          return (
-            <div className="services" key={index}>
-              <div className="dummy">
-                <div className="digital-content">
-                  <span>{item.span}</span>
-                  <p>{item.p}</p>
-                </div>
-                <div>
-                  <img src={item.img} alt="" />
-                </div>
+        <div className="main-service">
+        {DigitalContent.map((item, index) => (
+          <div
+            className={`services ${
+              visibleIndex >= index ? "fade-in" : "hidden"
+            }`}
+            key={index}
+          >
+            <div className="dummy">
+              <div className="digital-contents">
+                <span>{item.span}</span>
+                <p>{item.p}</p>
+              </div>
+              <div>
+                <img src={item.img} alt="" />
               </div>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
+      </div>
+      
       <div className="additional-content">
         <div className="global-scale-content">
           <div>
@@ -285,26 +304,10 @@ const Home = () => {
             Teams large and small rely on EMB
           </p>
           <div>
-            <button className="contact-sales" onClick={toggleFormVisibility} style={{cursor:"pointer", marginBottom:"20px"}}>
-              Contact Sales →
-            </button>
+          <ContactSaleButton></ContactSaleButton>
           </div>
-
-          {<>
-            <Form
-              isFormVisible={isFormVisible}
-              onClose={() => setIsFormVisible(false)}
-            />
-            </>
-          }
-
           <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              width: "100%",
-            }}
+            className="accomplish-cust"
           >
             <div>
               9.4/10 <br /> Customer Satisfaction

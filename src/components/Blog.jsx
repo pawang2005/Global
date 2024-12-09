@@ -1,4 +1,6 @@
 import Carousel from "./Carousel";
+import ContactSaleButton from "./ContactSaleButton";
+import './Blog.component.css'
 const Blog = () => {
   const cardsData = [
     {
@@ -70,10 +72,10 @@ const Blog = () => {
   ];
   return (
     <>
-      <div className="blog-container">
+      <div className="blog-container" style={{backgroundColor:"black"}}>
         <div className="blog">
-          <h3>Blogs</h3>
-          <h2>Learning how Technology can help you grow</h2>
+          <h3 style={{color:"#fff"}}>Blogs</h3>
+          <h2 style={{color:"#fff"}}>Learning how Technology can help you grow</h2>
           <p>
             We bring you the latest insights in the tech industry. Stay at the
             forefront of technology trends and discover how to thrive in the
@@ -90,8 +92,8 @@ const Blog = () => {
         <div className="accomplish-content">
           <h2>See all that you can accomplish with EMB Global</h2>
           <div>
-            <button className="contact-sales">Contact Sales →</button>
-          </div>
+          <ContactSaleButton></ContactSaleButton>
+        </div>
         </div>
       </div>
     </>

@@ -3,7 +3,6 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 20%;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   opacity: 1;
   transform: translateY(0);
@@ -16,12 +15,13 @@
 
 .driving-content .image-content {
   display: flex;
+  width: 40%;
   justify-content: center;
   align-items: center;
 }
 
 .testimonial {
-  max-width: 600px;
+  max-width: 60%;
 }
 
 .testimonial-image {
@@ -44,4 +44,22 @@
 .testimonial-position {
   color: gray;
   font-size: 0.9em;
+}
+
+@media screen and (max-width: 728px){
+  .driving-content{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .testimonial{
+    padding: 20px;
+  }
+  .testimonial-content {
+    font-size: 0.8rem;
+  }
+  .testimonial-name {
+    font-size: 1.2rem;
+  }
+  
 }

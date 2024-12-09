@@ -4,7 +4,6 @@ import Container from "./Container";
 import Blog from "./Blog";
 import BrandSlider from "./BrandSlider";
 const Partner = () => {
-  
   const interval = 2000;
   const [currentIndexContainer, setCurrentIndexContainer] = useState(0);
 
@@ -24,7 +23,23 @@ const Partner = () => {
     return () => clearInterval(slideInterval); // Clean up on unmount
   }, [interval]);
 
-  
+  const whyemb = [
+    {
+      head: "Access our Client Network",
+      content:
+        "With over 2500 clients from 15 industries, get the opportunity to take up the most rewarding projects and grow with us.",
+    },
+    {
+      head: "Access our Client Network",
+      content:
+        "With over 2500 clients from 15 industries, get the opportunity to take up the most rewarding projects and grow with us.",
+    },
+    {
+      head: "Access our Client Network",
+      content:
+        "With over 2500 clients from 15 industries, get the opportunity to take up the most rewarding projects and grow with us.",
+    },
+  ];
   return (
     <>
       <div className="container">
@@ -34,11 +49,13 @@ const Partner = () => {
           </div>
           <div>
             <h3>
-            Get verified with us and like 1000+ of our partners, see your agency soar by as much as 35%. Our platform is your gateway to assured growth.
+              Get verified with us and like 1000+ of our partners, see your
+              agency soar by as much as 35%. Our platform is your gateway to
+              assured growth.
             </h3>
           </div>
           <div>
-            <button className="contact-sales" style={{cursor:"pointer"}}>
+            <button className="contact-sales" style={{ cursor: "pointer" }}>
               Join Us →
             </button>
           </div>
@@ -65,6 +82,7 @@ const Partner = () => {
 
           <div className="why-emb-text">
             <div className="why-emb-list">
+              
               <div style={{ marginBottom: "30px" }}>
                 <div
                   style={{ display: "flex", flexDirection: "row", gap: "3%" }}
@@ -242,48 +260,45 @@ const Partner = () => {
         </div>
       </div>
 
-        
-
       <div className="testimonial-container-algo">
-      {/* Heading */}
-      <h1 className="testimonial-heading-algo">
-        Driving results for leaders across the globe
-      </h1>
+        {/* Heading */}
+        <h1 className="testimonial-heading-algo">
+          Driving results for leaders across the globe
+        </h1>
 
-      {/* Company Logo */}
-      <div className="company-logo-algo">
-        <img
-          src="/brand.png" // Replace with the actual logo URL
-          alt="Algosoft Logo"
-        />
+        {/* Company Logo */}
+        <div className="company-logo-algo">
+          <img
+            src="/brand.png" // Replace with the actual logo URL
+            alt="Algosoft Logo"
+          />
+        </div>
+
+        {/* Testimonial Text */}
+        <p className="testimonial-text-algo">
+          "Our association with EMB Global has carved out new revenue streams
+          for our company by enabling us to take on unlimited projects which we
+          had to give up earlier due to bandwidth or unserviceability."
+        </p>
+
+        {/* Author Details */}
+        <div className="testimonial-author-algo">
+          <p className="author-name">Vivek</p>
+          <p className="author-designation">Director, Algosoft</p>
+        </div>
       </div>
-
-      {/* Testimonial Text */}
-      <p className="testimonial-text-algo">
-        "Our association with EMB Global has carved out new revenue streams for
-        our company by enabling us to take on unlimited projects which we had
-        to give up earlier due to bandwidth or unserviceability."
-      </p>
-
-      {/* Author Details */}
-      <div className="testimonial-author-algo">
-        <p className="author-name">Vivek</p>
-        <p className="author-designation">Director, Algosoft</p>
-      </div>
-    </div>
-
 
       <div className="slider-container-algo-outer">
         <div className="left-button">
-        <button
-          className="slider-button-algo left"
-          onClick={handlePrevContainer}
-        >
-          -
-        </button>
+          <button
+            className="slider-button-algo left"
+            onClick={handlePrevContainer}
+          >
+            -
+          </button>
         </div>
-  
-        <div className="slider-container-algo"> 
+
+        <div className="slider-container-algo">
           <div className="slider-algo">
             <div
               className="slider-track-algo"
@@ -298,14 +313,13 @@ const Partner = () => {
           </div>
         </div>
         <div className="right-button">
-        <button
-          className="slider-button-algo right"
-          onClick={handleNextContainer}
-        >
-          +
-        </button>
+          <button
+            className="slider-button-algo right"
+            onClick={handleNextContainer}
+          >
+            +
+          </button>
         </div>
-        
       </div>
 
       <div>

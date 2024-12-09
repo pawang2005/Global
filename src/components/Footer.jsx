@@ -70,12 +70,12 @@ const Footer = () => {
 
         <div className="footer-right">
           <div className="links">
-            <a href="#contact">Contact Us</a>
-            <a href="#about">About Us</a>
-            <a href="#case-studies">Case Studies</a>
-            <a href="#insights">Insights</a>
-            <a href="#careers">Careers</a>
-            <a href="#partners">For Partners</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/about">About Us</a>
+            <a href="/case-studies">Case Studies</a>
+            <a href="/insights">Insights</a>
+            <a href="/careers">Careers</a>
+            <a href="/partner">For Partners</a>
             <a href="/grievance-redressal-policy">Grievance Redressal Policy</a>
             <a href="/terms-and-conditions">Terms and Conditions</a>
             <a href="/privacy-policy">Privacy Policy</a>

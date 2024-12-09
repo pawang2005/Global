@@ -1,13 +1,18 @@
 .footer {
   background-color: #f8f8f8;
   color: #333;
-  padding: 20px 40px;
+  padding: 10vh 40px;
+  height: 90vh;
 }
 
 .footer-content {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 
 .footer-left{
@@ -40,11 +45,12 @@
 
 .links a{
   color: #555;
+  font-weight: 100 !important;
   text-decoration: none;
 }
 
 .links  a:hover {
-  color: #0073e6;
+  color: #11a64a;
 }
 
 
@@ -54,3 +60,16 @@
   font-size: 12px;
 }
 
+
+@media screen and (max-width: 728px) {
+  
+.footer-content {
+  flex-direction: column;
+}
+.footer-left,.footer-right{
+  width: 100%;
+}
+.footer{
+  height: fit-content;
+}
+}

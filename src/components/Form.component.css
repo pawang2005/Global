@@ -1,4 +1,4 @@
-.form_bg_container{
+.form_bg_container {
   display: flex;
       position: fixed;
       top: 0;
@@ -8,6 +8,7 @@
       height: 100vh;
       justify-content: end;
       overflow: auto;
+      padding: 0px !important;
       z-index: 100000;
 }
 
@@ -26,8 +27,6 @@
     margin-top: 50px;
     margin-right: 50px;
 }
-
-
 
 .form-row {
   display: flex;
