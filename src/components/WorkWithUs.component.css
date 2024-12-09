@@ -135,5 +135,35 @@
   justify-content: center;
 }
 
+@media screen and (max-width: 720px) {
+  .content-containers{
+    flex-direction: column;
+    margin: 20px 0px;
+  }
+  .content-containers .context{
+    padding: 0px;
+    text-align: center;
+  }
+  .content-containers .context h3{
+    margin-top: 10px;
+  }
+  .content-containers .image-containers ,.content-containers .context{
+    width: 100%;
+  }
+  .row{flex-direction: column;}
+  .row button{
+    width: 100%;
+  }
+  .join-us{
+    padding: 0px;
+  }
+  .main-container .main-header{
+    text-align: center;
+  }
+  .main-container .after-header-content p{
+    padding: 0%;
+  }
+}
+
 
 

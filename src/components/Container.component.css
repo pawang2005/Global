@@ -49,3 +49,16 @@
 .journey-algo li span {
   font-weight: bold;
 }
+
+@media screen and (max-width: 728px){
+  .container-algo{
+    flex-direction: column;
+  }
+  .left-panel-algo{
+    border-right: none;
+    width: 100%;
+  }
+  .right-panel-algo{
+    width: 100%;
+  }
+}

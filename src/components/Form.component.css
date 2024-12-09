@@ -108,4 +108,8 @@
   color: #004085;
 }
 
-
+@media screen and (max-width:728px) {
+  .form-container{
+    margin-right: 0px;
+  }
+}

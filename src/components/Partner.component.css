@@ -203,8 +203,9 @@ h3 {
 /* Container Styling */
 .testimonial-container-algo {
   text-align: center;
+  margin-bottom: 100px;
   padding: 50px 20px;
-  height: 100vh;
+  height: fit-content;
   margin-top: 30px;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9; /* Light background for better contrast */
@@ -251,7 +252,7 @@ h3 {
   font-size: 20px;
   color: #777;
 }
-@media screen and (max-width:728px) {
+@media screen and (max-width:425px) {
   .why-emb-reason{
     flex-direction: column;
   }
@@ -259,4 +260,16 @@ h3 {
   .main-cards{
     flex-direction: column;
   }
+  .icon{
+    transform: rotate(0deg) !important;
+  }
+
+  .next-step-img{
+    display: none;
+  }
+
+  .next-c{
+    margin: 10px 0px;
+  }
+  
 }

@@ -10,6 +10,7 @@
   width: 100%;
   z-index: 1000;
 }
+
 .logo img {
   height: auto;
   width: 100px;
@@ -55,6 +56,7 @@
   transition: background-color 0.3s;
   border-radius: 4px;
 }
+
 .contact-sales {
   padding: 10px 20px;
   background-color: white;
@@ -122,6 +124,7 @@
 .dropdown-item-subitem a:hover {
   background-color: #f5f5f5;
 }
+
 .burger-menu {
   display: none;
   flex-direction: column;
@@ -133,12 +136,14 @@
   cursor: pointer;
   padding: 0;
 }
+
 .burger-menu span {
   width: 30px;
   height: 3px;
   background: #333;
   transition: all 0.3s linear;
 }
+
 
 @media (max-width: 768px) {
   .header {
@@ -162,6 +167,9 @@
     display: none;
     padding: 20px;
   }
+  .nav.open {
+    display: flex;
+  }
 
   .nav.open {
     display: flex;
@@ -171,17 +179,26 @@
     width: 100%;
     margin-bottom: 15px;
   }
+
   .dropdown-menu {
     position: static;
     width: 100%;
     box-shadow: none;
     margin-top: 10px;
   }
+
   .dropdown-item-subitem {
     position: static;
     width: 100%;
     box-shadow: none;
+    overflow: auto;
     margin-left: 20px;
+  }
+  .contact-sales {
+    display: none;
+  }
+  .Items {
+    margin-right: 0;
   }
 
   .contact-sales {
@@ -197,12 +214,14 @@
     justify-content: space-between;
     align-items: center;
   }
-
   .icon {
     transition: transform 0.3s ease;
   }
-
   .icon.open {
     transform: rotate(180deg);
   }
+  header .contact-sales{
+    display: none !important; 
+  }
 }
+

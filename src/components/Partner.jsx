@@ -152,7 +152,7 @@ const Partner = () => {
           <h2>How to get on board with us</h2>
         </div>
         <div className="main-cards">
-          <div>
+          <div className="next-c">
             <div className="card-sign">
               <div className="step-badge">
                 <div>Step 1</div>
@@ -172,7 +172,7 @@ const Partner = () => {
           <div className="next-step-img">
             <img src="/right.png" alt="" />
           </div>
-          <div>
+          <div className="next-c">
             <div className="card-sign">
               <div className="step-badge">
                 <div>Step 2</div>
@@ -192,7 +192,7 @@ const Partner = () => {
           <div className="next-step-img">
             <img src="/right.png" alt="" />
           </div>
-          <div>
+          <div className="next-c">
             <div className="card-sign">
               <div className="step-badge">
                 <div>Step 3</div>
@@ -212,7 +212,7 @@ const Partner = () => {
           <div className="next-step-img">
             <img src="/right.png" alt="" />
           </div>
-          <div>
+          <div className="next-c">
             <div className="card-sign">
               <div className="step-badge">
                 <div>Step 4</div>
