@@ -1,0 +1,93 @@
+.main-container-cont{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 100px;
+  height: fit-content;
+}
+
+.left-content,.right-content{
+  width: 20%;
+  position: relative;
+  height: fit-content;
+}
+
+
+.left-content img,.right-content img{
+  width: 20%;
+  height: auto;
+  position: absolute;
+}
+.ava1{
+  top: 20px;
+  right: 150px;
+}
+.ava2{
+  top: 150px;
+  left: 50px;
+}
+
+.ava3{
+  top: 300px;
+  right: 50px;
+}
+.ava4{
+  top: 20px;
+  left: 150px;
+}
+.ava5{
+  top: 150px;
+  right: 50px;
+}
+
+.ava6{
+  left: 50px;
+  top: 300px;
+}
+.container-cont{
+  width: 60%;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+
+.development{
+  display: flex;
+  flex-direction: column;
+}
+.development-content h2{
+  text-align: left !important;
+}
+.development-content{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.left-cont{
+  width: 50%;
+  padding: 40px;
+  top: 0;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  position: sticky;
+  justify-content: center;
+  height: 100vh;
+  border-right: 1px solid black;
+}
+
+.right-cont{
+  position: relative;
+  padding: 40px;
+  right: 0;
+  width: 50%;
+  height: 2000px;
+}
+
+.right-cont img{
+  width: 100%;
+  height: auto;
+}

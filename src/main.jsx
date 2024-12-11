@@ -8,6 +8,10 @@ import TermsandCondition from "./components/TermsandCondition.jsx";
 import GrievanceRedressalPage from "./components/GrievanceRedressalPage.jsx";
 import WorkWithUs from "./components/WorkWithUs.jsx";
 import Partner from "./components/Partner.jsx";
+import SubHeader from "./components/SubHeader.jsx";
+import AIData from "./AIData.js";
+import IotData from "./IoTData.js";
+import Staff from "./components/Staff.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,7 +22,10 @@ const router = createBrowserRouter([
       { path: "/grievance-redressal-policy", element: <GrievanceRedressalPage/> },
       { path: "/work-with-us", element: <WorkWithUs/> },
       { path: "/partner", element: <Partner/> },
-      {path: "/", element: <Home />}
+      {path: "/", element: <Home />},
+      {path: "/staff", element: <Staff />},
+      {path: "/iot", element: <SubHeader Data={IotData} />},
+      {path:"/ai",element: <SubHeader Data={AIData} />}
     ],
   },
 ]);
