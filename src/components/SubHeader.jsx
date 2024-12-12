@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ContactSaleButton from "./ContactSaleButton.jsx";
-import "./IOT.component.css";
+// import "./IOT.component.css";
 import DrivingResult from "./DrivingResult.jsx";
 import CaseStudies from "./CaseStudies.jsx";
 import Blog from "./Blog.jsx";

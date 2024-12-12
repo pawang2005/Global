@@ -1,4 +1,5 @@
 import ContactSaleButton from "./ContactSaleButton";
+import DeveloperProfile from './DeveloperProfile';
 import "./Staff.component.css";
 import BrandSlider from "./BrandSlider";
 const Staff = () => {
@@ -124,6 +125,9 @@ const Staff = () => {
       <div>
         <div><h2>Know everything about your developers with complete technical mapping</h2></div>
         <div>
+
+        <DeveloperProfile />
+          
           <div></div>
           <div></div>
         </div>
