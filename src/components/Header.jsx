@@ -19,7 +19,7 @@ const dropdownData = [
       {
         icon: "/cloud.png",
         label: "Data and Cloud",
-        link: "#data-cloud",
+        link: "/data-and-cloud",
         subItems: [
         ],
       },
@@ -34,7 +34,7 @@ const dropdownData = [
         ],
       },
       { icon: "/marketing.png", label: "Marketing", link: "/marketing" },
-      { icon: "/staff.png", label: "Staff Augmentation", link: "/staff-aug" },
+      { icon: "/staff.png", label: "Staff Augmentation", link: "/staff" },
     ],
   },
   {

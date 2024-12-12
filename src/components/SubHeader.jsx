@@ -74,20 +74,20 @@ const SubHeader = ({ Data }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setActiveIndexList((prevIndex) => (prevIndex + 1) % solutions.length);
-    }, 4000); // Change the interval duration as desired (in milliseconds)
+      setActiveIndexList((prevIndex) => (prevIndex + 1) % Data.our_solutions.length);
+    }, 4000);
 
     setIntervalId(interval);
 
     return () => clearInterval(interval);
-  }, [solutions.length]);
+  }, [Data.our_solutions.length]);
 
   const handleListItemClick = (index) => {
     setActiveIndexList(index);
     clearInterval(intervalId);
     setIntervalId(
       setInterval(() => {
-        setActiveIndexList((prevIndex) => (prevIndex + 1) % solutions.length);
+        setActiveIndexList((prevIndex) => (prevIndex + 1) % Data.our_solutions.length);
       }, 4000)
     );
   };
@@ -206,7 +206,7 @@ const SubHeader = ({ Data }) => {
               Innovative {Data.main} Technologies for Every Need
             </h2>
           </div>
-          <div className="our-solution-main-content">
+          <div className="our-solution-main-content" >
             <div
               className="grid grid-cols-1 md:grid-cols-2 gap-8 our-solution"
             >
@@ -245,7 +245,7 @@ const SubHeader = ({ Data }) => {
                 ))}
               </div>
             </div>
-            <div className="mt-8 our-solution-image" style={{ width: "50%" }}>
+            <div className="our-solution-image" style={{ width: "50%", height:"50%" }}>
               {activeIndexList !== null && (
                 <img
                   src={Data.our_solutions[activeIndexList].image}

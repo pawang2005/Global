@@ -130,6 +130,7 @@ svg{
   justify-content: center;
   align-items: center;
   width: 50%;
+  height: fit-content;
 }
 
 .our-solution-list{
@@ -161,9 +162,9 @@ h2{
 }
 
 .our-solution-image img{
-  height: 80%;
+  height: 500px;
   width: 90%;
-  border: 1px solid black;
+  border: 1px solid #ccc;
 }
 
 .your-all-in-one{
@@ -236,7 +237,7 @@ h2{
 }
 .Technology-img{
   padding: 15px 30px;
-  border: 1px solid #ccc;
+  text-align: center;
 }
 .Technology-2{
   margin-right: 40px;
@@ -315,12 +316,16 @@ h2{
   .our-solution-header{
     padding: 0px !important;
   }
-  .our-solution{
+  .our-solution-main-content .our-solution{
     width: 100%;
+    height: fit-content;
   }
   .our-solution-image{
     width: 100% !important;
+    height: fit-content;
   }
+
+  
  
   .our-solution-main-content{
     flex-direction: column;
@@ -360,6 +365,10 @@ h2{
   }
   .why-choose-us-text{
     width: 100%;
+    text-align: center ;
+  }
+  .why-choose-us-text p{
+    text-align: center;
   }
   .why-choose-us-img{    
     width: 80%;

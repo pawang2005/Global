@@ -9,9 +9,9 @@ import GrievanceRedressalPage from "./components/GrievanceRedressalPage.jsx";
 import WorkWithUs from "./components/WorkWithUs.jsx";
 import Partner from "./components/Partner.jsx";
 import SubHeader from "./components/SubHeader.jsx";
-import AIData from "./AIData.js";
-import IotData from "./IoTData.js";
+import EmergingTechData from "./EmergingTechData.js";
 import Staff from "./components/Staff.jsx";
+import SoftwareDevelopmentData from "./SoftwareDevelopment.js";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -24,8 +24,15 @@ const router = createBrowserRouter([
       { path: "/partner", element: <Partner/> },
       {path: "/", element: <Home />},
       {path: "/staff", element: <Staff />},
-      {path: "/iot", element: <SubHeader Data={IotData} />},
-      {path:"/ai",element: <SubHeader Data={AIData} />}
+      {path: "/iot", element: <SubHeader Data={EmergingTechData.IOT} />},
+      {path:"/ai",element: <SubHeader Data={EmergingTechData.AI} />},
+      {path:"/akvr", element: <SubHeader Data={EmergingTechData.AKVR}/>},
+      {path:"/digital-kiosk", element: <SubHeader Data={EmergingTechData.DIGITAL_KIOSK}/>},
+      {path:"/apps-and-websites", element: <SubHeader Data={SoftwareDevelopmentData.Apps_and_Websites}/>},
+      {path:"/e-commerce", element: <SubHeader Data={SoftwareDevelopmentData.E_Commerce}/>},
+      {path:"/erp", element: <SubHeader Data={SoftwareDevelopmentData.ERP}/>},
+      {path:'/marketing', element: <SubHeader Data={ SoftwareDevelopmentData.Apps_and_Websites }></SubHeader>},
+      {path:'/data-and-cloud', element: <SubHeader Data={EmergingTechData.AI}></SubHeader>}
     ],
   },
 ]);
