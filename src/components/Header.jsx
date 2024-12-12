@@ -12,10 +12,8 @@ const dropdownData = [
         subItems: [
           { label: "Internet of Things", link: "/iot" },
           { label: "Artificial Intelligence", link: "/ai" },
-          { label: "Blockchain", link: "/blockchain" },
-          { label: "Robotic Automation", link: "/robotic-animation" },
           { label: "Digital Kiosk", link: "/digital-kiosk" },
-          { label: "Metaverse", link: "/metaverse" },
+          { label: "AK/VR", link: "/akvr" },
         ],
       },
       {
@@ -23,9 +21,6 @@ const dropdownData = [
         label: "Data and Cloud",
         link: "#data-cloud",
         subItems: [
-          { label: "Cost Optimiation", link: "/cost-optimisation" },
-          { label: "Cybersecurity", link: "/cybersecurity" },
-          { label: "Big Data Analytics", link: "/big-data=analytics" },
         ],
       },
       {
@@ -36,7 +31,6 @@ const dropdownData = [
           { label: "Apps & Websites", link: "/apps-and-websites" },
           { label: "E-Commerce", link: "/e-commerce" },
           { label: "ERP", link: "/erp" },
-          { label: "Game Development", link: "game-development" },
         ],
       },
       { icon: "/marketing.png", label: "Marketing", link: "/marketing" },

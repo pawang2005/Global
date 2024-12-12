@@ -54,9 +54,10 @@
   }
   .testimonial{
     padding: 20px;
+    max-width: 100% !important;
   }
   .testimonial-content {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .testimonial-name {
     font-size: 1.2rem;

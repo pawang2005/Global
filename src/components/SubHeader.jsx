@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import ContactSaleButton from "./ContactSaleButton.jsx";
-import "./IOT.component.css";
+import "./SubHeader.component.css";
 import DrivingResult from "./DrivingResult.jsx";
 import CaseStudies from "./CaseStudies.jsx";
 import Blog from "./Blog.jsx";
@@ -209,7 +209,6 @@ const SubHeader = ({ Data }) => {
           <div className="our-solution-main-content">
             <div
               className="grid grid-cols-1 md:grid-cols-2 gap-8 our-solution"
-              style={{ width: "50%" }}
             >
               <div className="our-solution-list">
                 {Data.our_solutions.map((data, index) => (

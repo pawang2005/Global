@@ -129,6 +129,7 @@ svg{
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
 }
 
 .our-solution-list{
@@ -275,4 +276,92 @@ h2{
 .why-choose-us-text p{
   font-size: 20px;
   text-align: left;
+}
+
+
+@media screen and (max-width: 728px) {
+
+  .Trusted-By{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .what-we-do{
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 40px;
+  }
+  .what-we-do-content,.what-we-do-img{
+    width: 100%;
+    margin-top: 10px;
+  }
+  .main-sub-content{
+    top: 50px;
+  }
+  .our-approach{
+    padding: 20px;
+  }
+  .our-approach-main-content{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .our-approach-content{
+    width: 100%;
+    padding: 20px;
+  }
+
+  .our-solution-header{
+    padding: 0px !important;
+  }
+  .our-solution{
+    width: 100%;
+  }
+  .our-solution-image{
+    width: 100% !important;
+  }
+ 
+  .our-solution-main-content{
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    padding: 0;
+    gap: 30px;
+  }
+  .your-all-in-one-content{
+    flex-direction: column;
+    margin: 2rem;
+  }
+  .context-content{
+    margin-bottom: 20px;
+  }
+  .Technology-logos{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .Technology-1{
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .Technology-2{
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .why-choose-us-context{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .why-choose-us-text{
+    width: 100%;
+  }
+  .why-choose-us-img{    
+    width: 80%;
+  }
 }
