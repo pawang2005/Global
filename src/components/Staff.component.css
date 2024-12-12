@@ -79,15 +79,57 @@
   border-right: 1px solid black;
 }
 
+.right-cont span{
+  display: block;
+}
 .right-cont{
   position: relative;
   padding: 40px;
   right: 0;
   width: 50%;
-  height: 2000px;
+  height: fit-content;
 }
 
 .right-cont img{
   width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container-cont img{
+    width: 50%;
+  }
+  .main-container-cont{
+    margin-bottom: 0px;
+  }
+  .main-container-cont .container-cont{
+    width: 70%;
+  }
+  .main-container-cont .left-content, .right-content{
+    width: 15%;
+  }
+  .ava1,.ava3{
+    right: 20px;
+  }
+  .ava2{
+    left: 30px;
+  }
+  .ava5{
+    right: 30px;
+  }
+  .ava4, .ava6{
+    left: 20px;
+  }
+  .development-content{
+    flex-direction: column;
+  }
+  .left-cont{
+    position: relative;
+    border-right: 0px;
+    top: 0;
+    width: 100%;
+  }
+  .right-cont{
+    width: 100%;
+  }
 }
