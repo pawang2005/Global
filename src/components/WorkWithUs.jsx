@@ -10,12 +10,56 @@ const WorkWithUs = () => {
     reasonForContact: "",
     howDidYouHear: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbw35_dEkTavVhY3uSpBGeLrdcgqwsKg-LzCHPKtOFrJcBakNPNMO8yr6wCTIbPcSCE0/exec',
+        {
+          method: 'POST',
+          body: JSON.stringify(formData),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          mode: 'no-cors'
+        }
+      );
+
+      // Reset form on successful submission
+      setFormData({
+        name: "",
+        businessEmail: "",
+        businessName: "",
+        contactNumber: "",
+        jobTitle: "",
+        reasonForContact: "",
+        howDidYouHear: "",
+      });
+      
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you for your submission! We will get back to you soon.'
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'There was an error submitting the form. Please try again.'
+      });
+    }
+    
+    setIsSubmitting(false);
   };
 
   const work = [

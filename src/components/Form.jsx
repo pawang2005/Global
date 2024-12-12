@@ -51,7 +51,7 @@ function Form({ isFormVisible, onClose }) {
     setSubmitStatus({ isLoading: true, success: false, error: null });
 
     try {
-      const googleSheetsScriptUrl = 'https://script.google.com/macros/s/AKfycbxWEYJ2AJOAgyJ4xWQWVqvFxSRkUW5BSWw-nUL7x-4ye_xhLQFSmeHbti4f4Sv9pKUmcA/execc';
+      const googleSheetsScriptUrl = 'https://script.google.com/macros/s/AKfycbx3ZPTdWCI5XP4Gynyek1HJvhKYjAQ4o-CQbUQqe3XotlHSH7z928sPf_sex3j7ZG1dfQ/exec';
 
       const response = await fetch(googleSheetsScriptUrl, {
         method: 'POST',
