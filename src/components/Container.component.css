@@ -1,0 +1,64 @@
+
+
+.container-algo {
+  display: flex;
+  font-family: Arial, sans-serif;
+  border: 1px solid #ddd;
+  margin: 0; 
+  width: 100%; 
+  flex-shrink: 0; 
+}
+
+.left-panel-algo {
+  width: 50%;
+  padding: 40px;
+  border-right: 1px solid #ddd;
+}
+
+.company-name-algo {
+  color: #0073e6;
+  font-size: 24px;
+}
+
+.right-panel-algo {
+  width: 50%;
+  padding: 20px;
+}
+
+.info-algo {
+  margin-top: 20px;
+}
+
+.info-algo div {
+  margin-bottom: 10px;
+}
+
+.journey-algo {
+  margin-top: 20px;
+}
+
+.journey-algo ul {
+  list-style: none;
+  padding: 0;
+}
+
+.journey-algo li {
+  margin-bottom: 10px;
+}
+
+.journey-algo li span {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 728px){
+  .container-algo{
+    flex-direction: column;
+  }
+  .left-panel-algo{
+    border-right: none;
+    width: 100%;
+  }
+  .right-panel-algo{
+    width: 100%;
+  }
+}

@@ -1,0 +1,30 @@
+.policy-container{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+.policy-container .policy-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.policy-content{
+  display: flex;
+}
+
+.policy-content .policy-content-container{
+  margin: 30px 50px;
+}
+.policy-content .policy-content-container p{
+  font-size: 20px;
+}
+
+
+.policy-content .policy-content-container span{
+  font-weight: bold;
+  font-size: 20px;
+}

@@ -1,0 +1,275 @@
+h3 {
+  font-weight: 100;
+}
+
+
+
+.brands {
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin: 0px 200px ; */
+}
+
+.brand-header h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.why-emb{
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-emb-header{
+  display: flex;
+  justify-content: center;
+  margin: 50px auto;
+}
+
+.why-emb-reason{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 85%;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.why-emb-image{
+  display: flex;
+  object-fit: cover;
+  flex-grow: 1;
+  background-color: #faf6ff;
+  padding: 50px;
+  width: 100%;
+  height: 100%;
+}
+.why-emb-text{
+  padding: 20px;
+  flex-grow: 1;
+}
+
+
+.why-emb-list li{
+  text-decoration: none;
+}
+
+.why-emb-list img{
+  display: block;
+  height: 20px;
+  width: 30px;
+}
+
+
+.card-sign {
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 30px;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step-badge {
+  background-color: #cb9bfc;
+  color: #fff;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    /* padding: 3px 40px; */
+    width: 100px;
+    height: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+
+
+}
+
+.icon img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+.card-sign h3 {
+  font-size: 30px;
+  text-align: left;
+  font-weight: bold;
+  color: #333;
+  margin: 8px 0;
+}
+
+.card-sign  p {
+  font-size: 20px;
+  text-align: left;
+  color: #666;
+}
+
+.main-cards{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.next-step-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.next-step-img img{
+  width: 40px;
+  height: 30px;
+}
+.board-header{
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+}
+.board{
+  margin: 200px 40px;
+}
+
+.algosoft{
+  margin: 60px;
+}
+
+.slider-container-algo-outer{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  z-index: -1;
+}
+
+.slider-container-algo {
+  width: 100%;
+  max-width: 1200px; /* Maximum width for responsiveness */
+  margin: 0 auto; /* Center slider horizontally */
+  overflow: hidden; /* Ensures only one slide is visible */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider-algo {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-track-algo {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.slider-button-algo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  /* z-index: 1; */
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.slider-button-algo.left {
+  left: 10px;
+}
+
+.slider-button-algo.right {
+  right: 10px;
+}
+
+.slider-button-algo:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+
+/* Container Styling */
+.testimonial-container-algo {
+  text-align: center;
+  margin-bottom: 100px;
+  padding: 50px 20px;
+  height: fit-content;
+  margin-top: 30px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9; /* Light background for better contrast */
+}
+
+/* Heading Styling */
+.testimonial-heading-algo {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333; /* Darker shade for the heading */
+}
+
+/* Company Logo Styling */
+.company-logo-algo img {
+  max-width: 150px;
+  height: auto;
+  margin: 20px 0;
+}
+
+/* Testimonial Text Styling */
+.testimonial-text-algo {
+  font-size: 25px;
+  font-style: bold;
+  color: #555;
+  line-height: 1.6;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+/* Author Details Styling */
+.testimonial-author-algo {
+  margin-top: 30px;
+}
+
+.author-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.author-designation {
+  font-size: 20px;
+  color: #777;
+}
+@media screen and (max-width:425px) {
+  .why-emb-reason{
+    flex-direction: column;
+  }
+
+  .main-cards{
+    flex-direction: column;
+  }
+  .icon{
+    transform: rotate(0deg) !important;
+  }
+
+  .next-step-img{
+    display: none;
+  }
+
+  .next-c{
+    margin: 10px 0px;
+  }
+  
+}

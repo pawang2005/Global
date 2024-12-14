@@ -1,0 +1,227 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 7px 20px;
+  background-color: white;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo img {
+  height: auto;
+  width: 100px;
+  max-height: 40px;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+}
+.nav-item {
+  position: relative;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.nav-item:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  width: 300px;
+  border-radius: 4px;
+  z-index: 1000;
+  transition: opacity 0.3s, transform 0.3s ease;
+}
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  border-radius: 4px;
+}
+
+.contact-sales {
+  padding: 10px 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+.contact-sales:hover {
+  background-color: black;
+  color: white;
+}
+.content {
+  font-size: 1.2rem;
+}
+.Items {
+  margin-right: 25px;
+}
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+.dropdown-item img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+.dropdown-item:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.02);
+}
+.dropdown-item-subitem {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background-color: #fff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  width: 250px;
+  border-radius: 4px;
+  z-index: 1100;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  transform: translateX(10px);
+}
+.dropdown-item:hover .dropdown-item-subitem {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+.dropdown-item-subitem a {
+  display: block;
+  padding: 15px 10px;
+  text-decoration: none;
+  color: #727272;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.dropdown-item-subitem a:hover {
+  background-color: #f5f5f5;
+}
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.burger-menu span {
+  width: 30px;
+  height: 3px;
+  background: #333;
+  transition: all 0.3s linear;
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+  }
+
+  .burger-menu {
+    display: flex;
+  }
+  .burger-menu {
+    display: flex;
+  }
+  .nav {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+    padding: 20px;
+  }
+  .nav.open {
+    display: flex;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav-item {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    margin-top: 10px;
+  }
+
+  .dropdown-item-subitem {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+    overflow: auto;
+    margin-left: 20px;
+  }
+  .contact-sales {
+    display: none;
+  }
+  .Items {
+    margin-right: 0;
+  }
+
+  .contact-sales {
+    display: none;
+  }
+
+  .Items {
+    margin-right: 0;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .icon {
+    transition: transform 0.3s ease;
+  }
+  .icon.open {
+    transform: rotate(180deg);
+  }
+  header .contact-sales{
+    display: none !important; 
+  }
+}
+

@@ -1,0 +1,36 @@
+body{
+  margin: 0;
+  padding: 0;
+  font-family: Inter, sans-serif !important;
+}
+
+select,input,textarea{
+  font-size: 15px;  
+  width: 100%;
+  background-color: #fafafa;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  margin-bottom: 0;
+  padding: 10px;
+  color: black;
+
+}
+
+
+h2{
+  font-size: 1.8rem;
+    font-weight: 500;
+    color: black ;
+}
+h3{
+  font-weight: bold;
+}
+p{
+  font-size: 18px;
+}
+
+label{
+  font-size: 15px;
+  font-weight: normal !important;
+  color: black;
+}
