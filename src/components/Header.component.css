@@ -13,9 +13,13 @@
 
 .logo img {
   height: auto;
-  width: 100px;
-  max-height: 40px;
+  width: 70%;
+  max-height: auto;
 }
+
+.head{
+  width: 20%;
+} 
 .nav {
   display: flex;
   gap: 20px;
@@ -146,82 +150,159 @@
 
 
 @media (max-width: 768px) {
-  .header {
-    padding: 10px 20px;
-  }
-
-  .burger-menu {
-    display: flex;
-  }
-  .burger-menu {
-    display: flex;
-  }
-  .nav {
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: none;
-    padding: 20px;
-  }
-  .nav.open {
-    display: flex;
-  }
-
-  .nav.open {
-    display: flex;
-  }
-
-  .nav-item {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .dropdown-menu {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    margin-top: 10px;
-  }
-
-  .dropdown-item-subitem {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    overflow: auto;
-    margin-left: 20px;
-  }
-  .contact-sales {
-    display: none;
-  }
-  .Items {
-    margin-right: 0;
-  }
-
-  .contact-sales {
-    display: none;
-  }
-
-  .Items {
-    margin-right: 0;
-  }
-
-  .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .icon {
-    transition: transform 0.3s ease;
-  }
-  .icon.open {
-    transform: rotate(180deg);
-  }
   header .contact-sales{
     display: none !important; 
   }
-}
+  .head{
+    width: 80%;
+  }
 
+  .menu-item a, .menu-item span, .sub-item{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 0;
+  }
+
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    color: black !important;
+    
+
+  }
+  
+  .logo img {
+    width: 100px;
+  }
+  
+  .burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+  
+  .burger-menu span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav.open {
+    position: fixed;
+    top: 10%; /* Adjust to avoid full coverage */
+    right: 0;
+    width: 60%; /* Limit coverage as per the provided image */
+    max-width: 400px;
+    height: auto; /* Avoid full page coverage */
+    background: white;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    animation: slide-in 0.3s ease forwards;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+  }
+  
+  /* Menu Titles */
+  .menu-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 0;
+  }
+  
+  /* Submenu Items */
+  .submenu {
+    display: none;
+    flex-direction: column;
+    animation: slide-left 0.3s ease forwards;
+  }
+  
+  .submenu.open {
+    display: flex;
+  }
+  
+  /* Menu and Submenu Item Styles */
+  .menu-items,
+  .sub-items {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu-item,
+  .sub-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .menu-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .back-btn {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #0073e6;
+    margin-bottom: 10px;
+  }
+  
+  /* Animations */
+  @keyframes slide-in {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slide-left {
+    from {
+      transform: translateX(50%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Mobile View Adjustments */
+  @media (max-width: 768px) {
+    .burger-menu {
+      display: flex;
+    }
+  
+    .nav {
+      display: none;
+    }
+  
+    .nav.open {
+      display: flex;
+    }
+  }
+}

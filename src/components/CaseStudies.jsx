@@ -73,7 +73,7 @@ const CaseStudies = () => {
     <>
        <div className="case">
         <div className="case-studies">
-          <h3 style={{ color: "lightgray" }}>Case Studies</h3>
+          <h3 style={{ color: "lightgray", fontSize:"40px" }}>Our Projects</h3>
         </div>
         <div className="explore-impact">
           <h2 style={{ color: "#fff" }}>Explore the impact we've delivered</h2>

@@ -107,9 +107,17 @@ const SubHeader = ({ Data }) => {
               <ContactSaleButton></ContactSaleButton>
             </div>
           </div>
-          <div className="image-container">
-            <img src={Data.container.image} alt="" />
-          </div>
+          {
+            Data.main==="Internet of Things"?
+            (<div className="image-container" style={{ margin: "20px auto",
+              marginLeft: "120px"}}>
+              <img src={Data.container.image} alt="" />
+            </div>)
+            :
+            (<div className="image-container">
+              <img src={Data.container.image} alt="" />
+            </div>)
+          }
         </div>
 
         <div className="Trusted-By">
@@ -121,12 +129,13 @@ const SubHeader = ({ Data }) => {
       </div>
 
       <div className="what-we-do">
+        
+        <div className="what-we-do-img">
+          <img src={Data.what_we_do.what_we_do_image} alt="" />
+        </div>
         <div className="what-we-do-content">
           <h2>What we do</h2>
           <p>{Data.what_we_do.what_we_do_content}</p>
-        </div>
-        <div className="what-we-do-img">
-          <img src={Data.what_we_do.what_we_do_image} alt="" />
         </div>
       </div>
 

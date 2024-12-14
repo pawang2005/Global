@@ -83,6 +83,8 @@
 
 .accomplish-cust{
   display: flex;
+  color: black;
+  gap: 30px;
   margin-top: 40px;
 }
 

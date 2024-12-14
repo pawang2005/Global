@@ -28,91 +28,11 @@ const Footer = () => {
             <p>
               <strong>India</strong>
             </p>
-            <p style={{ fontSize: "20px", margin: "10px auto" }}>
-              Gurugram: Plot No. 17, Phase-4, Maruti Udyog, Sector 18, Gurugram,
-              HR
-            </p>
             <p style={{ margin: "10px auto", marginBottom: "40px" }}>
               Email: <a href="mailto:contact@emb.global">contact@emb.global</a>
             </p>
           </div>
-          <div
-            className="other-locations"
-            style={{
-              fontSize: "23px",
-              fontWeight: "bold",
-              margin: "20px auto",
-            }}
-          >
-            <p
-              className="main-location"
-              onClick={toggleSubLocation}
-              style={{ cursor: "pointer" }}
-            >
-              <strong>Kingdom of Emirates</strong>{" "}
-              {isSubLocationVisible ? " -" : " +"}
-            </p>
-            {isSubLocationVisible && (
-              <div className="other-sub-location">
-                <h4>
-                  Abu Dhabi: Etihad Airways Centre, Al Rahah, Al Muneera, Abu
-                  Dhabi, UAE
-                </h4>
-                <h4>Dubai: Building 4, Bay Square, Business Bay, Dubai, UAE</h4>
-                <div className="footer-number">
-                  <span>+971- 503566002</span>
-                  <span>+971- 563553404</span>
-                  <a href="mailto:contact@emb.global">contact@emb.global</a>
-                </div>
-              </div>
-            )}
-
-            <p
-              className="main-location"
-              onClick={toggleSubLocation2}
-              style={{ cursor: "pointer" }}
-            >
-              <strong>Kingdom of Saudi Arabia</strong>{" "}
-              {isSubLocationVisible2 ? " -" : " +"}
-            </p>
-            {isSubLocationVisible2 && (
-              <div className="other-sub-location">
-                <h4>
-                  Abu Dhabi: Etihad Airways Centre, Al Rahah, Al Muneera, Abu
-                  Dhabi, UAE
-                </h4>
-                <h4>Dubai: Building 4, Bay Square, Business Bay, Dubai, UAE</h4>
-                <div className="footer-number">
-                  <span>+971- 503566002</span>
-                  <span>+971- 563553404</span>
-                  <a href="mailto:contact@emb.global">contact@emb.global</a>
-                </div>
-              </div>
-            )}
-
-            <p
-              className="main-location"
-              onClick={toggleSubLocation3}
-              style={{ cursor: "pointer" }}
-            >
-              <strong>United States of America</strong>
-              {isSubLocationVisible3 ? " -" : " +"}
-            </p>
-            {isSubLocationVisible3 && (
-              <div className="other-sub-location">
-                <h4>
-                  Abu Dhabi: Etihad Airways Centre, Al Rahah, Al Muneera, Abu
-                  Dhabi, UAE
-                </h4>
-                <h4>Dubai: Building 4, Bay Square, Business Bay, Dubai, UAE</h4>
-                <div className="footer-number">
-                  <span>+971- 503566002</span>
-                  <span>+971- 563553404</span>
-                  <a href="mailto:contact@emb.global">contact@emb.global</a>
-                </div>
-              </div>
-            )}
-          </div>
+            
         </div>
 
         <div className="footer-right">

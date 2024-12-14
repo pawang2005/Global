@@ -81,7 +81,6 @@ const Blog = () => {
             forefront of technology trends and discover how to thrive in the
             digital era.
           </p>
-          <button>View More →</button>
         </div>
         <div className="blog-carousel">
           <Carousel cards={cardsData} cardsperslide={3} />

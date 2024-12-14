@@ -46,3 +46,9 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 520px) {
+  .progress-container{
+    gap: 2%;
+  }
+}
