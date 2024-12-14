@@ -123,7 +123,7 @@ const SubHeader = ({ Data }) => {
         <div className="Trusted-By">
           <h2 style={{ margin: "0px" }}>Trusted by</h2>
           {Data.container.trustedBy.map((image, index) => {
-            return <img src={image.image} alt="" />;
+            return <img src={image.image} alt="" key={index}/>;
           })}
         </div>
       </div>

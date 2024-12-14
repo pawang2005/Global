@@ -53,7 +53,7 @@
     flex-direction: column;
     color: #fff !important;
     background-color: black !important;
-    height: 1100px;
+    height: fit-content;
   }.blog{
     display: flex !important;
     flex-direction: column;

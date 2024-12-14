@@ -80,7 +80,7 @@ const Home = () => {
         <div className="trust-content">
           <h2>Trusted by the best in the business</h2>
         </div>
-        <div class="brand-slider-logo">
+        <div className="brand-slider-logo">
           <BrandSlider></BrandSlider>
         </div>
       </div>

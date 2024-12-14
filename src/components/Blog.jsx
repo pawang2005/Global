@@ -74,7 +74,7 @@ const Blog = () => {
     <>
       <div className="blog-container" style={{backgroundColor:"black"}}>
         <div className="blog">
-          <h3 style={{color:"#fff"}}>Blogs</h3>
+          <h3 style={{color:"#fff", fontSize:"40px"}}>Blogs</h3>
           <h2 style={{color:"#fff"}}>Learning how Technology can help you grow</h2>
           <p>
             We bring you the latest insights in the tech industry. Stay at the

@@ -292,6 +292,10 @@ h2{
 
   .main-sub-content{
     width: 100%;
+    gap: 0%;
+  }
+  .main-sub-content div{
+    font-size: 20px;
   }
   .what-we-do{
     flex-direction: column;

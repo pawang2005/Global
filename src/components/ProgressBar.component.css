@@ -9,7 +9,7 @@
 }
 
 .progress-item-container {
-  flex: 1;
+  /* flex: 1; */
   text-align: center;
   position: relative;
 }
@@ -26,7 +26,7 @@
 }
 
 .progress-item {
-  margin-top: 5px;
+  margin-top: 10px;
   font-size: 0.9em;
   color: gray;
   font-weight: 400;
@@ -50,5 +50,8 @@
 @media screen and (max-width: 520px) {
   .progress-container{
     gap: 2%;
+  }
+  .progress-item{
+    font-size: 0.5rem;
   }
 }
