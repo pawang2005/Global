@@ -94,22 +94,24 @@ function Form({ isFormVisible, onClose }) {
   if (!isFormVisible) return null;
 
   return (
-    <>
+    <>  
       {
         <div
           className="form_bg_container"
           style={{ display: isFormVisible ? "flex" : "none" }}
+          onClick={onClose} 
         >
-          <div className="form-container">
+          <div className="form-container" onClick={(e) => e.stopPropagation()}>
             <div
               style={{
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",
               }}
+              
             >
-              <h2>Let’s get started!</h2>{" "}
-              <button style={{ background: "#fff" }} onClick={onClose}>
+              <h2 style={{margin:"0"}}>Let’s get started!</h2>{" "}
+              <button style={{ background: "#fff", display:"flex" }} onClick={onClose}>
                 x
               </button>
             </div>
@@ -234,25 +236,23 @@ function Form({ isFormVisible, onClose }) {
                         <div
                           key={index}
                           onClick={() => handleServiceClick(service)}
-                          style={{
-                            border: formData.servicesRequired.includes(service)
-                              ? "2px solid #007BFF"
-                              : "1px solid #e1e1e1",
-                            backgroundColor: formData.servicesRequired.includes(
-                              service
-                            )
-                              ? "#cce5ff"
-                              : "#fafafa",
-                            color: formData.servicesRequired.includes(service)
-                              ? "#004085"
-                              : "black",
-                            cursor: "pointer",
-                          }}
+                          
                         >
                           <span
                             style={{
-                              padding: "10px;",
-                              margin: "10px;",
+                              padding:"10px",
+                              border: formData.servicesRequired.includes(service)
+                                ? "2px solid #007BFF"
+                                : "1px solid #e1e1e1",
+                              backgroundColor: formData.servicesRequired.includes(
+                                service
+                              )
+                                ? "#cce5ff"
+                                : "#fafafa",
+                              color: formData.servicesRequired.includes(service)
+                                ? "#004085"
+                                : "black",
+                              cursor: "pointer",
                             }}
                           >
                             {service}
@@ -289,9 +289,7 @@ function Form({ isFormVisible, onClose }) {
                   />
                 </div>
                 <p style={{ fontSize: "18px", marginBottom: "20px" }}>
-                  By proceeding you agree to Expand My Business's
-                  <a href="/privacy-policy">privacy policy</a> and
-                  <a href="/terms-and-conditions">terms and conditions</a>.
+                  By proceeding you agree to Expand My Business's <a href="/privacy-policy">privacy policy</a> and <a href="/terms-and-conditions">terms and conditions</a>.
                 </p>
                 <button
                   type="submit"
