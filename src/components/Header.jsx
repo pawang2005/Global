@@ -243,7 +243,7 @@ const Header = () => {
 
     }
       
-      <button className="contact-sales" onClick={toggleFormVisibility}>
+      <button className="contact-sales" onClick={toggleFormVisibility} style={{marginTop:"20px"}}>
         Contact Sales →
       </button>
       {

@@ -102,6 +102,9 @@ function Form({ isFormVisible, onClose }) {
           onClick={onClose} 
         >
           <div className="form-container" onClick={(e) => e.stopPropagation()}>
+          <button style={{ background: "#fff", display:"flex" , justifyContent:"end"}} onClick={onClose}>
+                x
+              </button>
             <div
               style={{
                 display: "flex",
@@ -111,9 +114,7 @@ function Form({ isFormVisible, onClose }) {
               
             >
               <h2 style={{margin:"0"}}>Let’s get started!</h2>{" "}
-              <button style={{ background: "#fff", display:"flex" }} onClick={onClose}>
-                x
-              </button>
+              
             </div>
             <p>Please fill the details below</p>
             <div className="form-group">
