@@ -169,7 +169,7 @@ const Home = () => {
         </div>
 
         <div className="global-img">
-          <img src="/global.gif" alt=""  style={{height: "-webkit-fill-available"}}/>
+          <img src="/global.gif" alt=""  style={{height: "auto"}}/>
         </div>
       </div>
 

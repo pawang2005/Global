@@ -206,6 +206,7 @@
   @media screen and (max-width: 480px){
     .services{
       width: 90vw;
+      
     }
     .main-service{
       flex-direction: column;
@@ -215,6 +216,12 @@
     .digital{
       height: fit-content;
     }
+    .dummy{
+      display: flex;
+      flex-direction: column;
+      gap:20px
+    }
+    
   }
 
 
