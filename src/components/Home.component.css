@@ -134,7 +134,7 @@
 
   .digital {
     margin-top: 0;
-    height: 800px;
+    height: fit-content;
     background-color: black;
     display: flex;
     justify-content: center;
@@ -144,6 +144,9 @@
   }
 
   .digital-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     padding: 20px 30px;
   }
 
@@ -154,7 +157,7 @@
   }
   .services {
     background-color: #fff;
-    height: 500px;
+    height: 550px;
     width: 350px;
     border: 1px solid black;
     border-radius: 5%;
@@ -210,7 +213,7 @@
     }
 
     .digital{
-      height: 2000px;
+      height: fit-content;
     }
   }
 
@@ -261,7 +264,7 @@
   margin-top: 40px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   .additional-content{
     flex-direction: column;
     padding: 0px;

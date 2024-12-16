@@ -253,7 +253,7 @@ function Form({ isFormVisible, onClose }) {
                               color: formData.servicesRequired.includes(service)
                                 ? "#004085"
                                 : "black",
-                              cursor: "pointer",
+                              cursor: "pointer",height:"100%",display:"flex", justifyContent:"center",alignItems:"center"
                             }}
                           >
                             {service}

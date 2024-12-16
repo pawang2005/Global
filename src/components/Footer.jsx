@@ -22,7 +22,7 @@ const Footer = () => {
           <img
             src="/emb.png"
             alt=""
-            style={{ height: "50px", width: "110px", marginBottom: "30px" }}
+            style={{ height: "50px", width: "110px", marginBottom: "30px" , mixBlendMode:"multiply"}}
           />
           <div className="location">
             <p>
