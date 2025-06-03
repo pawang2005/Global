@@ -4,7 +4,7 @@ import Form from "./Form";
 
 const dropdownData = [
   {
-    title: "Explore Services",
+    title: "Explore more Services",
     items: [
       {
         icon: "/emerging.png",
