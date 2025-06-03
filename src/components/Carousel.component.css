@@ -1,40 +1,69 @@
-/* Wrapper for the entire carousel */
 .carousel-wrapper-c {
-  overflow: hidden; /* Ensures only visible cards are shown */
-  width: 100%; /* Occupy full width of the container */
-  /* position: relative; */
-  height: 560px;
+  overflow: hidden;
+  width: 95%; 
+  height: 100%;
   display: flex;
   justify-content: center;
   margin-bottom: 40px;
 }
 
-/* Container for all cards */
-.carousel-cards {
-  display: flex; /* Arrange cards in a row */
-  transition: transform 0.3s ease-in-out; /* Smooth sliding effect */
-  will-change: transform; /* Optimize performance */
+.digital-content{
+  padding: 20px 30px;
 }
 
-/* Individual card styling */
-.cards {
-  flex: 0 0 calc(100% / 4); 
-  box-sizing: border-box;
-  margin: 20px;
-  width: 50px;
+.service {
+  background-color: #fff;
+  height: 500px;
+  width: 350px;
+  border: 1px solid black;
   border-radius: 5%;
+  top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  /* position: sticky; */
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
 }
-
-
-/* Image inside each card */
-.card-image {
+.service img {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
   width: 100%;
-  height: auto;
-  border-radius: 10px;
   object-fit: cover;
 }
 
-/* Arrow buttons styling */
+.service span{
+  font-size: 25px;
+  font-weight: 800;
+  color: black
+}
+.service p{
+  font-size: 20px;
+  font-weight: 500;
+  color: black
+}
+.carousel-cards {
+  display: flex; 
+  transition: transform 0.3s ease-in-out; 
+  will-change: transform;
+  gap: 2%;
+}
+
+.cards {
+  flex: 0 0 calc(100% / 4); 
+  box-sizing: border-box;
+  margin: 15px;
+  width: 40px;
+  padding-right: 20px;
+  border-radius: 5%;
+  padding: 10px;
+}
+
+
+
 .arrow-content {
   display: flex;
   justify-content: center;
@@ -57,4 +86,134 @@
 .arrow-content .next-item:hover {
   background-color: #fff;
   color: black;
+}
+
+/* Responsive Base Styles */
+.carousel-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.digital-content {
+  padding: 15px;
+}
+
+.service {
+  background-color: #fff;
+  height: auto;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.service img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  position: relative;
+  bottom: 0;
+}
+
+.service span {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: black;
+}
+
+.service p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+}
+
+.carousel-cards {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  gap: 2%;
+}
+
+
+
+.arrow-content {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.arrow-content .prev-item,
+.arrow-content .next-item {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  margin: 0 10px;
+}
+
+.arrow-content .prev-item:hover,
+.arrow-content .next-item:hover {
+  background-color: #fff;
+  color: black;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1200px) {
+  .cards {
+    flex: 0 0 calc(100% / 3);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .cards {
+    flex: 0 0 calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    width: 100%;
+  }
+  .carousel-cards{
+    width: 100%;
+  }
+
+  .service {
+    flex-direction: column;
+  }
+
+  .service img {
+    height: 200px;
+  }
+
+  .digital-content {
+    padding: 10px;
+  }
+
+  .service span {
+    font-size: 1.2rem;
+  }
+
+  .service p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .arrow-content .prev-item,
+  .arrow-content .next-item {
+    padding: 8px 15px;
+    font-size: 30px;
+  }
 }

@@ -1,0 +1,386 @@
+.Trusted-By{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 5%;
+  padding: 20px 40px;
+}
+
+.Trusted-By img{
+  width: 100px;
+  height: auto;
+}
+
+.what-we-do{
+  background-color: #f8f8f8;
+  display: flex;
+  height: fit-content;
+ flex-direction: row; 
+  padding: 0px 100px;
+}
+
+.what-we-do-content{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  margin: 100px auto;
+}
+
+
+
+.what-we-do-content p{
+  font-size: 20px;
+}
+
+.what-we-do-img{
+  display: flex;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.what-we-do-img img{
+  width: 70%;
+  height: 70%;
+}
+
+.main-sub-content {
+  margin-top: 40px;
+  display: flex;
+  background-color: #fff;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10%;
+  top: 70px;
+  position: sticky;
+  z-index: 10;
+  padding: 10px;
+}
+
+.main-sub-content div {
+  cursor: pointer;
+  padding: 10px;
+  border-bottom: 2px solid transparent; /* Default border is transparent */
+  transition: border-bottom 0.3s ease-in-out;
+}
+
+.main-sub-content div.active {
+  border-bottom: 2px solid #007bff; /* Blue underline for the active section */
+  font-weight: bold; /* Optional: make the active section bold */
+}
+
+
+.our-approach{
+  display: flex;
+  flex-direction: column;
+  padding: 100px;
+}
+
+.our-approach-main-content{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+}
+.our-approach-img{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  
+}
+
+
+.our-approach-img img{
+  width: 400px;
+  height: auto;
+}
+
+.our-approach-content{
+  width: 50%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.approach-list-head{
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-approach-content{
+  font: 20px;
+  color: black;
+}
+
+svg{
+  height: auto;
+  width: 20px;
+}
+
+#our-solutions {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+.our-solution{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: fit-content;
+}
+
+.our-solution-list{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: flex-start;
+}
+
+h2{
+  text-align: center;
+  font-weight: 800;
+  margin: 40px auto;
+  font-size: 40px;
+}
+
+.our-solution-main-content{
+  display:flex; 
+  flex-direction:row ; 
+  justify-content: flex-start;
+  width:100%; 
+  padding:30px 40px;
+}
+.our-solution-image{
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.our-solution-image img{
+  height: 500px;
+  width: 90%;
+  border: 1px solid #ccc;
+}
+
+.your-all-in-one{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
+.your-all-in-one-content {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin: 4rem;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(30px); /* Start slightly below */
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0); /* Reset position */
+  margin: 20px;
+}
+
+.context-content{ 
+  padding: 30px 30px 30px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  border-radius: 5px;
+  height: fit-content
+}
+
+.content-title{
+  font-weight:900; 
+  font-size:30px;
+}
+.context-content img{
+  height: 100px;
+  width: auto;
+}
+.center-context{
+  display: flex;
+  align-items: center;
+}
+
+.Technology-logos{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.Technology-logos img{
+  height: 60px;
+  width: auto;
+}
+
+.Technology-1{
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;
+  margin-left: 30px;
+ 
+}
+.Technology-img{
+  padding: 15px 30px;
+  text-align: center;
+}
+.Technology-2{
+  margin-right: 40px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+.why-choose-us-context{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.why-choose-us-img{
+  width: 50%;
+  height: auto;
+}
+
+.why-choose-us-text{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 30px;
+  gap: 20px;
+  text-align: left;
+}
+
+.why-choose-us-text h3{
+  font-size: 35px;
+  width: 100%;
+  
+}
+
+.why-choose-us-text p{
+  font-size: 20px;
+  text-align: left;
+}
+
+
+@media screen and (max-width: 728px) {
+
+  .Trusted-By{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+  }
+
+  .main-sub-content{
+    width: 100%;
+    gap: 0%;
+  }
+  .main-sub-content div{
+    font-size: 20px;
+  }
+  .what-we-do{
+    flex-direction: column;
+    width: 100%;
+    gap: 30px;
+    padding: 20px 40px;
+  }
+  .what-we-do-content,.what-we-do-img{
+    width: 100%;
+    margin-top: 10px;
+  }
+  .main-sub-content{
+    top: 50px;
+  }
+  .our-approach{
+    padding: 20px;
+  }
+  .our-approach-main-content{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .our-approach-content{
+    width: 100%;
+    padding: 20px;
+  }
+
+  .our-solution-header{
+    padding: 0px !important;
+  }
+  .our-solution-main-content .our-solution{
+    width: 100%;
+    height: fit-content;
+  }
+  .our-solution-image{
+    width: 100% !important;
+    height: fit-content;
+  }
+
+  
+ 
+  .our-solution-main-content{
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    padding: 0;
+    gap: 30px;
+  }
+  .your-all-in-one-content{
+    flex-direction: column;
+    margin: 2rem;
+  }
+  .context-content{
+    margin-bottom: 20px;
+  }
+  .Technology-logos{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  .Technology-1{
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .Technology-2{
+    flex-direction: column;
+    width: 50%;
+  }
+
+  .why-choose-us-context{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .why-choose-us-text{
+    width: 100%;
+    text-align: center ;
+  }
+  .why-choose-us-text p{
+    text-align: center;
+  }
+  .why-choose-us-img{    
+    width: 80%;
+  }
+}

@@ -4,31 +4,27 @@
   display: flex;
   font-family: Arial, sans-serif;
   border: 1px solid #ddd;
-  margin: 0; /* No additional margin for slides */
-  width: 100%; /* Each slide takes up full width of the slider */
-  flex-shrink: 0; /* Prevent shrinking when sliding */
+  margin: 0; 
+  width: 100%; 
+  flex-shrink: 0; 
 }
 
-/* Left panel inside Container */
 .left-panel-algo {
   width: 50%;
   padding: 40px;
   border-right: 1px solid #ddd;
 }
 
-/* Company name styling */
 .company-name-algo {
   color: #0073e6;
   font-size: 24px;
 }
 
-/* Right panel inside Container */
 .right-panel-algo {
   width: 50%;
   padding: 20px;
 }
 
-/* Information section styling */
 .info-algo {
   margin-top: 20px;
 }
@@ -37,7 +33,6 @@
   margin-bottom: 10px;
 }
 
-/* Journey section styling */
 .journey-algo {
   margin-top: 20px;
 }
@@ -53,4 +48,17 @@
 
 .journey-algo li span {
   font-weight: bold;
+}
+
+@media screen and (max-width: 728px){
+  .container-algo{
+    flex-direction: column;
+  }
+  .left-panel-algo{
+    border-right: none;
+    width: 100%;
+  }
+  .right-panel-algo{
+    width: 100%;
+  }
 }

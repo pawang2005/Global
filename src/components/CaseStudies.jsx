@@ -1,7 +1,6 @@
-import Carousel from "./Carousel";
-import ContactSaleButton from "./ContactSaleButton";
-import './Blog.component.css'
-const Blog = () => {
+import './CaseStudies.component.css'
+import Carousel from './Carousel';
+const CaseStudies = () => {
   const cardsData = [
     {
       title: "Software Development1",
@@ -72,31 +71,19 @@ const Blog = () => {
   ];
   return (
     <>
-      <div className="blog-container" style={{backgroundColor:"black"}}>
-        <div className="blog">
-          <h3 style={{color:"#fff", fontSize:"40px"}}>Blogs</h3>
-          <h2 style={{color:"#fff"}}>Learning how Technology can help you grow</h2>
-          <p>
-            We bring you the latest insights in the tech industry. Stay at the
-            forefront of technology trends and discover how to thrive in the
-            digital era.
-          </p>
+       <div className="case">
+        <div className="case-studies">
+          <h3 style={{ color: "lightgray", fontSize:"40px" }}>Our Projects</h3>
         </div>
-        <div className="blog-carousel">
-          <Carousel cards={cardsData} cardsperslide={3} />
+        <div className="explore-impact">
+          <h2 style={{ color: "#fff" }}>Explore the impact we've delivered</h2>
         </div>
-      </div>
-
-      <div className="accomplish">
-        <div className="accomplish-content">
-          <h2>See all that you can accomplish with EMB Global</h2>
-          <div>
-          <ContactSaleButton></ContactSaleButton>
-        </div>
+        <div className="carousel-container-c">
+          <Carousel cards={cardsData} cardsperslide={4} />
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Blog;
+export default CaseStudies;

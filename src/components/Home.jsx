@@ -1,111 +1,11 @@
 import "./Home.component.css";
 import Blog from "./Blog";
-import Carousel from "./Carousel";
+import CaseStudies from "./CaseStudies";
 import DrivingResult from "./DrivingResult";
 import BrandSlider from "./BrandSlider";
+import React, { useState, useEffect } from "react";
+import ContactSaleButton from "./ContactSaleButton";
 const Home = () => {
-  const cardsData = [
-    {
-      title: "Software Development1",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-    {
-      title: "Software Development2",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-    {
-      title: "Software Development3",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-    {
-      title: "Software Development4",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-    {
-      title: "Software Development5",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-    {
-      title: "Software Development6",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-    {
-      title: "Software Development7",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-    {
-      title: "Software Development8",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-    {
-      title: "Software Development9",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-    {
-      title: "Software Development10",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-    {
-      title: "Software Development11",
-      content:
-        "A mental health startup leveraged a mobile app for  patient interaction",
-      image: "/discover.png",
-    },
-  ];
-  const DrivingResultData = [
-    {
-      image: "/discover.png",
-      content:
-        "“1 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
-      name: "Pawan",
-      position: "CEO",
-      progress: "Agent Shortlisting",
-    },
-    {
-      image: "/discover.png",
-      content:
-        "“2 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
-      name: "Pawan",
-      position: "CEO",
-      progress: "Agent Shortlisting",
-    },
-    {
-      image: "/discover.png",
-      content:
-        "“3 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
-      name: "Pawan",
-      position: "CEO",
-      progress: "Agent Shortlisting",
-    },
-    {
-      image: "/discover.png",
-      content:
-        "“4 EMB Global's strategies, execution, and ideas sped up our goals. They instilled trust throughout, from start to finish, with flawless work, follow-up, and communication. Collaborating with them was smooth, easy, and aligned wiith our needs.”",
-      name: "Pawan",
-      position: "CEO",
-      progress: "Agent Shortlisting",
-    },
-  ];
   const DigitalContent = [
     {
       span: "Discover the Best Agencies",
@@ -128,10 +28,37 @@ const Home = () => {
     client: 2500,
     country: 23,
   };
+
+  const [visibleIndex, setVisibleIndex] = useState(-1);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const digitalSection = document.querySelector(".digital");
+      const rect = digitalSection.getBoundingClientRect();
+      const isInView = rect.top < window.innerHeight && rect.bottom >= 0;
+
+      if (isInView) {
+        // Trigger animation to show cards one by one
+        const timer = setInterval(() => {
+          setVisibleIndex((prevIndex) => {
+            if (prevIndex < DigitalContent.length - 1) {
+              return prevIndex + 1;
+            } else {
+              clearInterval(timer); // Clear interval once all cards are visible
+              return prevIndex;
+            }
+          });
+        }, 500); // Delay between card animations
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [DigitalContent]);
   return (
     <>
       <div className="container">
-        <div className="content-container" style={{ flexDirection: "column" }}>
+        <div className="content-container">
           <div>
             <h2>Empowering businesses on their digital journey</h2>
           </div>
@@ -142,7 +69,7 @@ const Home = () => {
             </h3>
           </div>
           <div>
-            <button className="contact-sales">Contact Sales →</button>
+            <ContactSaleButton></ContactSaleButton>
           </div>
         </div>
         <div className="image-container">
@@ -153,7 +80,7 @@ const Home = () => {
         <div className="trust-content">
           <h2>Trusted by the best in the business</h2>
         </div>
-        <div class="brand-slider-logo">
+        <div className="brand-slider-logo">
           <BrandSlider></BrandSlider>
         </div>
       </div>
@@ -162,13 +89,16 @@ const Home = () => {
         <div className="digital-context">
           <h1>Digital transformation simplified.</h1>
         </div>
-      </div>
-      <div className="main-service">
-        {DigitalContent.map((item, index) => {
-          return (
-            <div className="services" key={index}>
+        <div className="main-service">
+          {DigitalContent.map((item, index) => (
+            <div
+              className={`services ${
+                visibleIndex >= index ? "fade-in" : "hidden"
+              }`}
+              key={index}
+            >
               <div className="dummy">
-                <div className="digital-content">
+                <div className="digital-contents">
                   <span>{item.span}</span>
                   <p>{item.p}</p>
                 </div>
@@ -177,9 +107,10 @@ const Home = () => {
                 </div>
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
+
       <div className="additional-content">
         <div className="global-scale-content">
           <div>
@@ -238,26 +169,11 @@ const Home = () => {
         </div>
 
         <div className="global-img">
-          <img src="/global.gif" alt="" />
+          <img src="/global.gif" alt=""  style={{height: "auto"}}/>
         </div>
       </div>
 
-      <div className="case">
-        <div className="case-studies">
-          <h3 style={{ color: "lightgray" }}>Case Studies</h3>
-        </div>
-        <div className="explore-impact">
-          <h2 style={{ color: "#fff" }}>Explore the impact we've delivered</h2>
-        </div>
-        <div>
-          <button className="contact-sales" style={{ marginBottom: "20px" }}>
-            View All →
-          </button>
-        </div>
-        <div className="carousel-container-c">
-          <Carousel cards={cardsData} cardsperslide={4} />
-        </div>
-      </div>
+      <CaseStudies></CaseStudies>
 
       <div className="accomplish" style={{ background: "#fff" }}>
         <div className="accomplish-content">
@@ -267,18 +183,10 @@ const Home = () => {
           <p style={{ marginBottom: "40px" }}>
             Teams large and small rely on EMB
           </p>
-          <div style={{marginBottom:"40px"}}>
-            <button className="contact-sales">Contact Sales →</button>
+          <div>
+            <ContactSaleButton></ContactSaleButton>
           </div>
-          
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-between",
-              width:"100%"
-            }}
-          >
+          <div className="accomplish-cust">
             <div>
               9.4/10 <br /> Customer Satisfaction
             </div>
@@ -301,11 +209,7 @@ const Home = () => {
             <h2>Driving results for leaders across the globe</h2>
           </div>
 
-          <div className="driving-container">
-            <DrivingResult
-              DrivingResultData={DrivingResultData}
-            ></DrivingResult>
-          </div>
+          <DrivingResult></DrivingResult>
         </div>
       </div>
 

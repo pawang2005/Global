@@ -1,51 +1,62 @@
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Carousel.component.css";
 
 const Card = ({ title, content, image }) => (
   <div className="cards">
-    <div className="services" style={{ width: "330px" }}>
+    <div className="service">
       <div className="digital-content">
         <span>{title}</span>
         <p>{content}</p>
       </div>
-      <div>
-        <img src={image} alt="" />
+      <div className="image-container">
+        <img src={image} alt={title} />
       </div>
     </div>
   </div>
 );
 
-const Carousel = ({ cards, interval = 2000, cardsperslide }) => {
-  const [currentIndex, setCurrentIndex] = useState(cardsperslide);
+const Carousel = ({ cards, interval = 2000 }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
   const totalSlides = cards.length;
+  const cardsPerSlide = 4;
   const carouselRef = useRef(null);
 
   // Create a seamless loop by duplicating cards
   const clonedCards = [
-    ...cards.slice(-cardsperslide), // Clone last cards at the beginning
+    ...cards.slice(-cardsPerSlide),
     ...cards,
-    ...cards.slice(0, cardsperslide), // Clone first cards at the end
+    ...cards.slice(0, cardsPerSlide),
   ];
-  console.log(clonedCards);
+
   const handlePrev = () => {
-    if (isAnimating) return; // Prevent animation interruptions
+    if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => prev - 1);
   };
 
   const handleNext = () => {
-    if (isAnimating) return; // Prevent animation interruptions
+    if (isAnimating) return;
     setIsAnimating(true);
     setCurrentIndex((prev) => prev + 1);
   };
 
+  // Handle screen resize
   useEffect(() => {
-    const slideInterval = setInterval(() => {
-      handleNext(); // Automatically move to the next card
-    }, interval);
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
 
-    return () => clearInterval(slideInterval); // Clean up on unmount
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Auto-slide effect
+  useEffect(() => {
+    const slideInterval = setInterval(handleNext, interval);
+    return () => clearInterval(slideInterval);
   }, [interval]);
 
   // Handle seamless looping
@@ -54,25 +65,25 @@ const Carousel = ({ cards, interval = 2000, cardsperslide }) => {
       const timeout = setTimeout(() => {
         setIsAnimating(false);
 
-        // Snap to the original cards when reaching the cloned ones
         if (currentIndex === 0) {
           setCurrentIndex(totalSlides);
-        } else if (currentIndex === totalSlides + cardsperslide) {
-          setCurrentIndex(cardsperslide);
+        } else if (currentIndex === totalSlides + cardsPerSlide) {
+          setCurrentIndex(cardsPerSlide);
         }
-      }, 300); // Match with CSS transition duration
+      }, 300);
+
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex, totalSlides, cardsperslide, isAnimating]);
+  }, [currentIndex, totalSlides, cardsPerSlide, isAnimating]);
 
   return (
-    <>
+    <div className="carousel-container">
       <div className="carousel-wrapper-c" ref={carouselRef}>
         <div
           className="carousel-cards"
           style={{
             transform: `translateX(-${
-              (currentIndex * 100) / cardsperslide + 1
+              (currentIndex * 100) / cardsPerSlide + 1
             }%)`,
             transition: isAnimating ? "transform 0.3s ease-in-out" : "none",
           }}
@@ -84,13 +95,13 @@ const Carousel = ({ cards, interval = 2000, cardsperslide }) => {
       </div>
       <div className="arrow-content">
         <button className="prev-item" onClick={handlePrev}>
-          +
+          ←
         </button>
         <button className="next-item" onClick={handleNext}>
-          -
+          →
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

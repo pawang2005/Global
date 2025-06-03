@@ -1,0 +1,57 @@
+.progress-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+  gap: 5%;
+  font-size: 20px;
+}
+
+.progress-item-container {
+  /* flex: 1; */
+  text-align: center;
+  position: relative;
+}
+
+.progress-bar {
+  height: 4px;
+  border-radius: 2px;
+  transition: width 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.progress-bar.active {
+  animation: fillAnimation 3s linear forwards; 
+  background-color: green;
+}
+
+.progress-item {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: gray;
+  font-weight: 400;
+}
+
+.progress-item.active-label {
+  color: green;
+  font-weight: bold;
+}
+
+/* Filling bar animation */
+@keyframes fillAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .progress-container{
+    gap: 2%;
+  }
+  .progress-item{
+    font-size: 0.5rem;
+  }
+}

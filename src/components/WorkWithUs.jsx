@@ -10,20 +10,85 @@ const WorkWithUs = () => {
     reasonForContact: "",
     howDidYouHear: "",
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch(
+        'https://script.google.com/macros/s/AKfycbw35_dEkTavVhY3uSpBGeLrdcgqwsKg-LzCHPKtOFrJcBakNPNMO8yr6wCTIbPcSCE0/exec',
+        {
+          method: 'POST',
+          body: JSON.stringify(formData),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          mode: 'no-cors'
+        }
+      );
+
+      // Reset form on successful submission
+      setFormData({
+        name: "",
+        businessEmail: "",
+        businessName: "",
+        contactNumber: "",
+        jobTitle: "",
+        reasonForContact: "",
+        howDidYouHear: "",
+      });
+      
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you for your submission! We will get back to you soon.'
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'There was an error submitting the form. Please try again.'
+      });
+    }
+    
+    setIsSubmitting(false);
   };
+
+  const work = [
+    {
+      image: "/workingwithus.png",
+      head: "Bold experimentation",
+      content:
+        "At EMB Global we're not simply transforming the B2B landscape were completely redefining it. As a hypergrowth startup, we embrace experimentation without hesitation. When you become a member of our team you dont just hold a job you become a part of our groundbreaking initiatives and gain invaluable skills.",
+    },
+    {
+      image: "/workingwithus.png",
+      head: "Bold experimentation",
+      content:
+        "At EMB Global we're not simply transforming the B2B landscape were completely redefining it. As a hypergrowth startup, we embrace experimentation without hesitation. When you become a member of our team you dont just hold a job you become a part of our groundbreaking initiatives and gain invaluable skills.",
+    },
+    {
+      image: "/workingwithus.png",
+      head: "Bold experimentation",
+      content:
+        "At EMB Global we're not simply transforming the B2B landscape were completely redefining it. As a hypergrowth startup, we embrace experimentation without hesitation. When you become a member of our team you dont just hold a job you become a part of our groundbreaking initiatives and gain invaluable skills.",
+    },
+  ];
   return (
     <>
       <div className="main-container">
         <div className="main-header">
           <h2>Let’s redefine IT outsourcing, together</h2>
         </div>
-        <div className="after-header-content">
+        <div className="after-header-content">       
           <p>
             At EMB Global, we are a platform bridging the gap between agencies
             and clients and changing the face of interactions in the IT and
@@ -32,57 +97,18 @@ const WorkWithUs = () => {
         </div>
 
         <div className="main-content">
-          <div className="content-container">
-            <div className="image-container">
-              <img src="/workingwithus.png" alt="" />
-            </div>
-            <div className="context">
-              <h3>Bold experimentation</h3>
-              <br />
-              <p>
-                At EMB Global we're not simply transforming the B2B landscape;
-                we're completely redefining it. As a hypergrowth startup, we
-                embrace experimentation without hesitation. When you become a
-                member of our team you don't just hold a job; you become a part
-                of our groundbreaking initiatives and gain invaluable skills.
-              </p>
-            </div>
-          </div>
-
-          <div className="content-container">
-            <div className="context" style={{ alignItems: "flex-end" }}>
-              <h3>Bold experimentation</h3>
-              <br />
-
-              <p style={{ textAlign: "right" }}>
-                At EMB Global we're not simply transforming the B2B landscape;
-                we're completely redefining it. As a hypergrowth startup, we
-                embrace experimentation without hesitation. When you become a
-                member of our team you don't just hold a job; you become a part
-                of our groundbreaking initiatives and gain invaluable skills.
-              </p>
-            </div>
-            <div className="image-container">
-              <img src="/workingwithus.png" alt="" />
-            </div>
-          </div>
-
-          <div className="content-container">
-            <div className="image-container">
-              <img src="/workingwithus.png" alt="" />
-            </div>
-            <div className="context">
-              <h3>Bold experimentation</h3>
-              <br />
-              <p>
-                At EMB Global we're not simply transforming the B2B landscape;
-                we're completely redefining it. As a hypergrowth startup, we
-                embrace experimentation without hesitation. When you become a
-                member of our team you don't just hold a job; you become a part
-                of our groundbreaking initiatives and gain invaluable skills.
-              </p>
-            </div>
-          </div>
+          {work.map((data, index) => {
+            return (<div className="content-containers" key={index}>
+              <div className="image-containers">
+                <img src={data.image} alt="" />
+              </div>
+              <div className="context">
+                <h3>{data.head}</h3>
+                <br />
+                <p>{data.content}</p>
+              </div>
+            </div>);
+          })}
         </div>
 
         <div className="join-us">
@@ -131,7 +157,7 @@ const WorkWithUs = () => {
                 </div>
               </div>
               <div className="row">
-                <div style={{flexGrow:"1"}}>
+                <div style={{ flexGrow: "1" }}>
                   <label>
                     Contact Number<span className="required">*</span>
                     <input
@@ -143,7 +169,7 @@ const WorkWithUs = () => {
                     />
                   </label>
                 </div>
-                <div style={{flexGrow:"1"}}>
+                <div style={{ flexGrow: "1" }}>
                   <label>
                     Job Title<span className="required">*</span>
                     <input
@@ -157,9 +183,10 @@ const WorkWithUs = () => {
                 </div>
               </div>
               <div className="row">
-                <div style={{flexGrow:"1"}}>
+                <div style={{ flexGrow: "1" }}>
                   <label>
-                    Reason for Contact Request<span className="required">*</span>
+                    Reason for Contact Request
+                    <span className="required">*</span>
                     <textarea
                       name="reasonForContact"
                       value={formData.reasonForContact}
@@ -168,7 +195,7 @@ const WorkWithUs = () => {
                     />
                   </label>
                 </div>
-                <div style={{flexGrow:"1"}} >
+                <div style={{ flexGrow: "1" }}>
                   <label>
                     How did you hear about us
                     <textarea

@@ -2,9 +2,7 @@ h3 {
   font-weight: 100;
 }
 
-.image-container {
-  margin-top: 90px;
-}
+
 
 .brands {
   margin: 40px auto;
@@ -20,43 +18,6 @@ h3 {
   text-align: center;
 }
 
-.brand-slider{
-  display: flex;
-  flex-direction: row;
-}
-.slider-track{
-  display: flex; /* Arrange cards in a row */
-  transition: transform 0.2s ease-in-out; /* Smooth sliding effect */
-  will-change: transform;
-  margin-top: 40px;
-  z-index: -1;
-}
-.slide img{
-  width: 200px;
-  height: 100px;
-  border-radius: 10px;
-  object-fit: cover;
-}
-
-.slide{
-  flex: 0 0 calc(100% / 3); /* Dynamically adjust based on cards per slide */
-  max-width: calc(100% / 4);
-  box-sizing: border-box;
-  /* margin-right: 20px; */
-  padding: 10px;
-  width: 50px;
-  background-color: #fff;
-  border-radius: 5%;
-}
-
-.brand-slider{
-  overflow: hidden; /* Ensures only visible cards are shown */
-  width: 90%; /* Occupy full width of the container */
-  /* position: relative; */
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
-}
 
 .why-emb{
   margin-top: 40px;
@@ -107,6 +68,7 @@ h3 {
   height: 20px;
   width: 30px;
 }
+
 
 .card-sign {
   border: 1px solid #eaeaea;
@@ -241,8 +203,9 @@ h3 {
 /* Container Styling */
 .testimonial-container-algo {
   text-align: center;
+  margin-bottom: 100px;
   padding: 50px 20px;
-  height: 100vh;
+  height: fit-content;
   margin-top: 30px;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9; /* Light background for better contrast */
@@ -288,4 +251,25 @@ h3 {
 .author-designation {
   font-size: 20px;
   color: #777;
+}
+@media screen and (max-width:425px) {
+  .why-emb-reason{
+    flex-direction: column;
+  }
+
+  .main-cards{
+    flex-direction: column;
+  }
+  .icon{
+    transform: rotate(0deg) !important;
+  }
+
+  .next-step-img{
+    display: none;
+  }
+
+  .next-c{
+    margin: 10px 0px;
+  }
+  
 }

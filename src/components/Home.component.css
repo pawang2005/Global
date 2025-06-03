@@ -1,300 +1,308 @@
-/* Base styles */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* Container styles */
 .container {
   display: flex;
   flex-direction: row;
-  margin: 0px;
+  margin: 0;
   justify-content: center;
-  width: 100%;
-  overflow: hidden;
+  align-items: center;
+  max-width: 100%;
+  padding: 0 20px;
 }
 
 .content-container {
-  margin: 80px 20px;
   display: flex;
   flex-direction: column;
-  max-width: 600px;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+  padding: 40px 20px;
 }
 
-.content-container div {
-  padding: 20px;
+.content-container div h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: #343434 !important;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.content-container div h3 {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 300;
+  color: #343434;
+  line-height: 1.6;
+  margin-bottom: 20px;
 }
 
 .image-container {
-  width: 50%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .image-container img {
-  width: 100%;
+  max-width: 100%;
   height: auto;
   object-fit: contain;
 }
 
-/* Trust section */
-.trust {
-  margin-top: 100px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-}
-
-.brand-slider-logo {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-/* Digital section */
-.digital {
-  margin-top: 0;
-  min-height: 650px;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 20px;
-}
-
-.digital-context {
-  margin-top: 50px;
-  color: #fff;
-  text-align: center;
-}
-
-/* Services section */
-.main-service {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.services {
-  background-color: #fff;
-  height: auto;
-  min-height: 500px;
-  width: 100%;
-  max-width: 350px;
-  border: 1px solid black;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-  padding: 20px;
-  margin: 10px;
-}
-
-/* Additional content section */
-.additional-content {
-  margin-top: 100px;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  padding: 20px;
-  gap: 20px;
-}
-
-.global-scale-content {
-  width: 60%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* Served section */
-.served {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.served div {
-  flex: 1;
-  min-width: 200px;
-}
-
-/* Backed section */
-.Backed {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  align-items: center;
-}
-
-.Backed img {
-  height: 35px;
+.contact-sales {
+  padding: 12px 24px;
+  display: block;
   width: auto;
-  max-width: 150px;
+  min-width: 200px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  align-self: flex-start;
 }
 
-/* Case studies section */
-.case {
-  display: flex;
-  flex-direction: column;
+.contact-sales:hover {
   background-color: black;
-  align-items: center;
-  width: 100%;
-  padding: 40px 20px;
+  color: white;
 }
 
-/* Blog section */
-.blog-container {
-  display: flex;
-  flex-direction: row;
-  background-color: black;
-  width: 100%;
-  padding: 40px 20px;
-}
-
-.blog {
-  width: 40%;
-  color: #fff;
-  padding: 20px;
-}
-
-.blog-carousel {
-  width: 60%;
-}
-
-/* Accomplish section */
-.accomplish {
-  width: 100%;
-  background-color: black;
-  padding: 40px 20px;
-}
-
-.accomplish-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Driving section */
-.driving {
-  width: 100%;
-  padding: 40px 20px;
-}
-
-/* Mobile Responsive Styles */
-@media screen and (max-width: 1024px) {
-  .global-scale-content {
-    width: 100%;
-  }
-  
-  .blog-container {
-    flex-direction: column;
-  }
-  
-  .blog, .blog-carousel {
-    width: 100%;
-  }
-}
-
+/* Responsive Breakpoints */
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
+    padding: 20px;
   }
 
   .content-container {
-    margin: 40px 20px;
+    order: 1;
     text-align: center;
-    width: 100%;
+    align-items: center;
+    padding: 20px 10px;
+  }
+
+  .content-container div h2 {
+    text-align: center;
+  }
+
+  .content-container div h3 {
+    text-align: center;
   }
 
   .image-container {
+    order: 0;
+    margin-bottom: 30px;
+  }
+
+  .contact-sales {
     width: 100%;
-    padding: 0 20px;
-  }
-
-  .digital {
-    padding: 40px 20px;
-  }
-
-  .main-service {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .services {
-    max-width: 100%;
-  }
-
-  .additional-content {
-    flex-direction: column;
-  }
-
-  .global-scale-content {
-    width: 100%;
-  }
-
-  .served {
-    justify-content: center;
-  }
-
-  .Backed {
-    justify-content: center;
+    max-width: 300px;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .content-container h2 {
-    font-size: 24px;
+  .content-container div h2 {
+    font-size: 2rem;
   }
 
-  .content-container h3 {
-    font-size: 18px;
+  .content-container div h3 {
+    font-size: 1rem;
+  }
+}
+
+.trust{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.brand-slider-logo{
+  width: 80%;
+  margin: 80px 0px;
+}
+
+
+  .digital-context {
+    margin-top: 50px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: 100px 0px;
+    text-align: center;
+  }
+
+  .digital {
+    margin-top: 0;
+    height: fit-content;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .digital-contents {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 30px;
+  }
+
+  .main-service{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+  .services {
+    background-color: #fff;
+    height: 550px;
+    width: 350px;
+    border: 1px solid black;
+    border-radius: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .services img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
   }
 
   .services span {
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: 800;
+    color: black;
   }
 
   .services p {
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
   }
 
-  .served span {
-    font-size: 30px;
+  /* Animation classes */
+  .hidden {
+    opacity: 0;
+    transform: translateY(30px); /* Start slightly below */
   }
 
-  .accomplish-content {
-    padding: 20px;
+  .fade-in {
+    opacity: 1;
+    transform: translateY(0); /* Reset position */
+    margin: 20px;
   }
 
-  .Backed img {
-    height: 25px;
+  @media screen and (max-width: 480px){
+    .services{
+      width: 90vw;
+      
+    }
+    .main-service{
+      flex-direction: column;
+      gap: 2%;
+    }
+
+    .digital{
+      height: fit-content;
+    }
+    .dummy{
+      display: flex;
+      flex-direction: column;
+      gap:20px
+    }
+    
   }
 
-  .blog button {
-    width: 100%;
-    max-width: 200px;
-  }
+
+.additional-content {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
 }
 
-/* Utility classes for spacing */
-.mt-20 {
-  margin-top: 20px;
-}
-
-.mb-20 {
-  margin-bottom: 20px;
-}
-
-.p-20 {
+.global-scale-content{
+  margin: 20px;
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
 }
+
+
+.served{
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
+}
+.served span{
+  font-weight: 800;
+  font-size: 40px;
+}
+.served p{
+  font-size: medium;
+}
+.Backed{
+  display: flex;
+  flex-direction: row;
+  gap: 3%;
+}
+.Backed div{
+  font-size: 15px;
+  font-weight: 650;
+  padding: 5px 20px;
+}
+.Backed img{
+  height: 35px;
+  width: 150px;
+}
+.global-img{
+  margin-top: 40px;
+}
+
+@media screen and (max-width: 480px) {
+  .additional-content{
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+  }
+  .global-scale-content{
+    width: 90%;
+  }
+  .served{
+    flex-direction: column;
+  }
+  .Backed{
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+
+.driving .driving-impact .driving-impact-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 30px 0px;
+}
+
+
+
+
+

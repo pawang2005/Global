@@ -1,4 +1,6 @@
-import { useRef, useState, useEffect} from 'react'
+import { useRef, useState, useEffect } from 'react';
+import './BrandSlider.component.css';
+
 const BrandSlider = () => {
   const allLogos = [
     { image: "/brand.png" },
@@ -15,71 +17,36 @@ const BrandSlider = () => {
     { image: "/brand.png" },
     { image: "/brand.png" },
     { image: "/brand.png" },
-    { image: "/brand.png" },
-    { image: "/brand.png" },
   ];
+
   const interval = 2000;
-  const cardsperslide = 4;
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [cardsperslide, setCardsPerSlide] = useState(4);
   const [currentIndex, setCurrentIndex] = useState(cardsperslide);
   const totalSlides = allLogos.length;
-  const carouselRef = useRef(null);
 
-  const clonedCards = [
-    ...allLogos.slice(-cardsperslide), // Clone last cards at the beginning
-    ...allLogos,
-    ...allLogos.slice(0, cardsperslide), // Clone first cards at the end
-  ];
-
-  const handleNext = () => {
-    if (isAnimating) return; // Prevent animation interruptions
-    setIsAnimating(true);
-    setCurrentIndex((prev) => prev + 1);
+  const updateCardsPerSlide = () => {
+    if (window.innerWidth <= 480) setCardsPerSlide(1);
+    else if (window.innerWidth <= 768) setCardsPerSlide(2);
+    else setCardsPerSlide(4);
   };
 
   useEffect(() => {
-    const slideInterval = setInterval(() => {
-      handleNext(); // Automatically move to the next card
-    }, interval);
+    updateCardsPerSlide();
+    window.addEventListener('resize', updateCardsPerSlide);
+    return () => window.removeEventListener('resize', updateCardsPerSlide);
+  }, []);
 
-    return () => clearInterval(slideInterval); // Clean up on unmount
-  }, [interval]);
-
-  useEffect(() => {
-    if (isAnimating) {
-      const timeout = setTimeout(() => {
-        setIsAnimating(false);
-
-        // Snap to the original cards when reaching the cloned ones
-        if (currentIndex === 0) {
-          setCurrentIndex(totalSlides);
-        } else if (currentIndex === totalSlides + cardsperslide) {
-          setCurrentIndex(cardsperslide);
-        }
-      }, 300); // Match with CSS transition duration
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex, totalSlides, cardsperslide, isAnimating]);
- return( <div className="brand-slider" ref={carouselRef}>
-          <div
-            className="slider-track"
-            style={{
-              transform: `translateX(-${
-                (currentIndex * 100) / cardsperslide
-              }%)`,
-              transition: isAnimating ? "transform 0.2s ease-in-out" : "none",
-            }}
-          >
-            {clonedCards.map((logo, index) => (
-              <div className="slide" key={index} style={{display:"flex" ,justifyContent:"center", flexDirection:"column", gap:"10px", height:"100%"}}>
-                <img src={logo.image} alt={`Brand ${index + 1}`} />
-                <img src={logo.image} alt={`Brand ${index + 1}`} />
-              </div>
-            ))}
-            
+  return (
+    <div className="slider2">
+      <div className="slide-track2">
+        {allLogos.map((logo, index) => (
+          <div key={index} className="slide2">
+            <img src={logo.image} alt={`Logo ${index}`} />
           </div>
-        </div>
- )
-}
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default BrandSlider;
